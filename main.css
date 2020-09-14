@@ -25,6 +25,7 @@ header {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#343A40), to(#212529));
   background-image: linear-gradient(#343A40, #212529);
   color: white;
+  overflow-x: hidden;
 }
 
 .hero {

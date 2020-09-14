@@ -61,8 +61,10 @@ body {
 header {
   background-image: linear-gradient($darkest2, $darkest);
   color: white;
+  overflow-x: hidden;
 }
 .hero {
+
   position: relative;
   height: 50vh;
 }
