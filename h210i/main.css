@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=Barlow:wght@400;600;700&display=swap");
+* {
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+html, body {
+  font-family: 'Barlow', sans-serif;
+}
+
+body {
+  background-color: #E9ECEF;
+}
+
+header {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#343A40), to(#212529));
+  background-image: linear-gradient(#343A40, #212529);
+  color: white;
+}
+
+.hero {
+  position: relative;
+  height: 50vh;
+}
+
+.hero-left {
+  position: relative;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 100%;
+  width: 80%;
+}
+
+.hero-right {
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  background-image: url("images/h210i-01.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: center;
+}
+
+h3.branding {
+  padding: .75em 0;
+  display: block;
+  font-weight: 600;
+}
+
+h3.branding span {
+  font-weight: 400;
+  color: #8338EC;
+}
+
+h1.title {
+  letter-spacing: .04em;
+}
+
+.case img {
+  height: 15px;
+}
+
+.description {
+  font-size: .75em;
+}
+
+.poweredby {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.poweredby img {
+  height: 20px;
+}
+
+a.view {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: block;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font-size: .8em;
+  font-weight: 600;
+  background-color: #8338EC;
+  border-radius: 6px;
+  color: white;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+section h2 {
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+h2.label {
+  letter-spacing: .05em;
+  color: #ADB5BD;
+}
+
+.overview h2 {
+  opacity: .25;
+}
+
+.overview ul {
+  padding-bottom: 1.5em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.overview ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.overview ul li span.sub {
+  margin: .75em 0;
+  font-size: .65em;
+  opacity: .45;
+}
+
+.overview ul li span.main {
+  font-size: 1.1em;
+  font-weight: 800;
+}
+
+section.parts {
+  padding: 1.5em 0;
+}
+
+section.parts h3.type {
+  font-size: .8em;
+  margin: 1em 0;
+  text-transform: uppercase;
+}
+
+.part {
+  color: #212529;
+  border-radius: 6px;
+  background-color: white;
+  padding: .5em 1em;
+  margin: 1em 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+}
+
+.part .thumbnail {
+  margin: .5em 0;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.part .product-block {
+  margin-left: 1.5em;
+}
+
+.part .product-block div {
+  margin: .5em 0;
+}
+
+.part .product-block span {
+  margin: .25em 0;
+  display: block;
+  font-weight: 600;
+  font-size: .8em;
+}
+
+.part .product-block span a {
+  color: #8338EC;
+}
+
+.part .product-block .sub {
+  opacity: .75;
+}
+
+.part .product-block .title-block h1 {
+  margin-bottom: .25em;
+  font-size: 1em;
+}
+
+.part .product-block .title-block h3 {
+  opacity: .5;
+  font-size: .75em;
+}
+
+.part .product-block .price-block h2 {
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+.part .product-block .vendor-block {
+  font-weight: 600;
+}
+
+#cpu {
+  background-image: url("images/ryzen-3700x.jpg");
+}
+
+#aio {
+  background-image: url("images/kraken.png");
+}
+
+#mobo {
+  background-image: url("images/asus-rogstrix-b550i.png");
+}
+
+#ram {
+  background-image: url("images/corsair-vengence-lpx.png");
+}
+
+#nvme {
+  background-image: url("images/samsung-evo970.jpg");
+}
+
+#hdd {
+  background-image: url("images/seagate-barracuda.jpg");
+}
+
+#case {
+  background-image: url("images/h210i.png");
+}
+
+#psu {
+  background-image: url("images/evga-supernova.png");
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=Barlow:wght@400;600;700&display=swap');
+* {
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+$bgcolor: #E9ECEF;
+$darkest: #212529;
+$darkest2: #343A40;
+$accent: #8338EC;
+$radius: 6px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1400px;
+$fourk: 2000px;
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: #{$laptop}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin fourk {
+  @media (min-width: #{$fourk}) {
+    @content;
+  }
+}
+
+@mixin rwd($screen) {
+  @media (min-width: $screen+"px") {
+    @content;
+  }
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+html, body {
+  font-family: 'Barlow', sans-serif;
+}
+
+body {
+  background-color: $bgcolor;
+}
+
+header {
+  background-image: linear-gradient($darkest2, $darkest);
+  color: white;
+}
+.hero {
+  position: relative;
+  height: 50vh;
+}
+.hero-left {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  width: 80%;
+}
+.hero-right {
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(50%);
+  background-image: url('images/h210i-01.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: center;
+}
+
+h3.branding {
+  padding: .75em 0;
+  display: block;
+  font-weight: 600;
+  span {
+    font-weight: 400;
+    color: $accent;
+  }
+}
+h1.title {
+  letter-spacing: .04em;
+}
+.case img {
+  height: 15px;
+}
+.description {
+  font-size: .75em;
+}
+.poweredby{
+width: 60%;
+display: flex;
+justify-content: space-between;
+  img {
+    height: 20px;
+  }
+}
+a.view {
+  width: fit-content;
+  display: block;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font-size: .8em;
+  font-weight: 600;
+  background-color: $accent;
+  border-radius: $radius;
+  color: white;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+section h2 {
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+h2.label {
+  letter-spacing: .05em;
+  color: #ADB5BD;
+}
+.overview h2 {
+  opacity: .25;
+}
+.overview ul {
+  padding-bottom: 1.5em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    span.sub {
+      margin: .75em 0;
+      font-size: .65em;
+      opacity: .45;
+    }
+    span.main {
+      font-size: 1.1em;
+      font-weight: 800;
+    }
+  }
+}
+
+section.parts {
+  padding: 1.5em 0;
+  h3.type {
+    font-size: .8em;
+    margin: 1em 0;
+    text-transform: uppercase;
+  }
+}
+
+.part {
+  color: $darkest;
+  border-radius: $radius;
+  background-color: white;
+  padding: .5em 1em;
+  margin: 1em 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  .thumbnail {
+    margin: .5em 0;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat; 
+  }
+  .product-block {
+    margin-left: 1.5em;
+    div {
+      margin: .5em 0;
+    }
+    span {
+      margin: .25em 0;
+      display: block;
+      font-weight: 600;
+      font-size: .8em;
+      a {
+        color: $accent;
+      }
+    }
+    .sub {
+      opacity: .75;
+    }
+    .title-block {
+      h1 {
+        margin-bottom: .25em;
+        font-size: 1em;
+      }
+      h3 {
+        opacity: .5;
+        font-size: .75em;
+      }
+    }
+    .price-block {
+      h2 {
+        font-weight: 700;
+        font-size: 1.5em;
+      }
+    }
+    .vendor-block {
+      font-weight: 600;
+    }
+  }
+}
+
+//all thumbnails
+
+#cpu {
+  background-image: url('images/ryzen-3700x.jpg');
+}
+#aio {
+  background-image: url('images/kraken.png');
+}
+#mobo {
+  background-image: url('images/asus-rogstrix-b550i.png');
+}
+#ram {
+  background-image: url('images/corsair-vengence-lpx.png');
+}
+#nvme {
+  background-image: url('images/samsung-evo970.jpg');
+}
+#hdd {
+  background-image: url('images/seagate-barracuda.jpg');
+}
+#case {
+  background-image: url('images/h210i.png');
+}
+#psu {
+  background-image: url('images/evga-supernova.png');
+}
