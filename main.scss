@@ -10,6 +10,11 @@ $bgcolor: #E9ECEF;
 $darkest: #212529;
 $darkest2: #343A40;
 $accent: #8338EC;
+$accent2: #6247AA;
+$accent3: #A06CD5;
+$accent4: #7400b8;
+$red: #ef233c;
+$green: #0ead69;
 $radius: 6px;
 $tablet: 768px;
 $laptop: 1024px;
@@ -46,6 +51,7 @@ $fourk: 2000px;
 }
 
 .container {
+  z-index: 3;
   width: 85%;
   margin: 0 auto;
 }
@@ -64,12 +70,20 @@ main {
 }
 
 header {
+  position: relative;
   background-image: linear-gradient($darkest2, $darkest);
   color: white;
   overflow-x: hidden;
 }
+.hero-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 3px;
+  background-image: linear-gradient(to right, $accent, $accent2, $accent3);
+}
 .hero {
-
   position: relative;
   height: 50vh;
 }
@@ -81,7 +95,6 @@ header {
   flex-direction: column;
   justify-content: space-around;
   height: 100%;
-  width: 80%;
 }
 .hero-right {
   z-index: 1;
@@ -96,7 +109,6 @@ header {
   background-repeat: no-repeat;
   background-position-y: center;
 }
-
 h3.branding {
   padding: .75em 0;
   display: block;
@@ -107,16 +119,19 @@ h3.branding {
   }
 }
 h1.title {
+  font-size: 3em;
   letter-spacing: .04em;
 }
 .case img {
   height: 15px;
 }
 .description {
-  font-size: .75em;
+  line-height: 1.4em;
+  width: 65%;
+  font-size: .85em;
 }
 .poweredby{
-width: 60%;
+width: 42.5%;
 display: flex;
 justify-content: space-between;
   img {
@@ -156,7 +171,6 @@ h2.label {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     span.sub {
       margin: .75em 0;
       font-size: .65em;
@@ -178,6 +192,13 @@ section.parts {
   }
 }
 
+.fa-check-circle {
+  color: $green;
+}
+.warranted {
+  color: $accent3;
+}
+
 .part {
   color: $darkest;
   border-radius: $radius;
@@ -186,7 +207,11 @@ section.parts {
   margin: 1em 0;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  .thumbnail {
+  i {
+    padding-right: .35em;
+  }
+  .thumbnail { 
+    cursor: pointer;
     margin: .5em 0;
     width: 100%;
     background-size: contain;
@@ -203,11 +228,15 @@ section.parts {
       font-weight: 600;
       font-size: .8em;
       a {
-        color: $accent;
+        color: $accent3;
       }
     }
     .sub {
+      font-weight: 600;
       opacity: .75;
+    }
+    .green {
+      color: $green;
     }
     .title-block {
       h1 {
@@ -216,12 +245,18 @@ section.parts {
       }
       h3 {
         opacity: .5;
+        font-weight: 600;
         font-size: .75em;
       }
     }
+    .flex-block {
+      display: flex;
+      align-items: center;
+    }
     .price-block {
       h2 {
-        font-weight: 700;
+        color: $accent;
+        font-weight: 600;
         font-size: 1.5em;
       }
     }

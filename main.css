@@ -9,6 +9,7 @@
 }
 
 .container {
+  z-index: 3;
   width: 85%;
   margin: 0 auto;
 }
@@ -28,10 +29,21 @@ main {
 }
 
 header {
+  position: relative;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#343A40), to(#212529));
   background-image: linear-gradient(#343A40, #212529);
   color: white;
   overflow-x: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 3px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#8338EC), color-stop(#6247AA), to(#A06CD5));
+  background-image: linear-gradient(to right, #8338EC, #6247AA, #A06CD5);
 }
 
 .hero {
@@ -54,7 +66,6 @@ header {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   height: 100%;
-  width: 80%;
 }
 
 .hero-right {
@@ -84,6 +95,7 @@ h3.branding span {
 }
 
 h1.title {
+  font-size: 3em;
   letter-spacing: .04em;
 }
 
@@ -92,11 +104,13 @@ h1.title {
 }
 
 .description {
-  font-size: .75em;
+  line-height: 1.4em;
+  width: 65%;
+  font-size: .85em;
 }
 
 .poweredby {
-  width: 60%;
+  width: 42.5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -158,7 +172,6 @@ h2.label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
 }
 
 .overview ul li span.sub {
@@ -182,6 +195,14 @@ section.parts h3.type {
   text-transform: uppercase;
 }
 
+.fa-check-circle {
+  color: #0ead69;
+}
+
+.warranted {
+  color: #A06CD5;
+}
+
 .part {
   color: #212529;
   border-radius: 6px;
@@ -194,7 +215,12 @@ section.parts h3.type {
       grid-template-columns: 1fr 2fr;
 }
 
+.part i {
+  padding-right: .35em;
+}
+
 .part .thumbnail {
+  cursor: pointer;
   margin: .5em 0;
   width: 100%;
   background-size: contain;
@@ -217,11 +243,16 @@ section.parts h3.type {
 }
 
 .part .product-block span a {
-  color: #8338EC;
+  color: #A06CD5;
 }
 
 .part .product-block .sub {
+  font-weight: 600;
   opacity: .75;
+}
+
+.part .product-block .green {
+  color: #0ead69;
 }
 
 .part .product-block .title-block h1 {
@@ -231,11 +262,22 @@ section.parts h3.type {
 
 .part .product-block .title-block h3 {
   opacity: .5;
+  font-weight: 600;
   font-size: .75em;
 }
 
+.part .product-block .flex-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .part .product-block .price-block h2 {
-  font-weight: 700;
+  color: #8338EC;
+  font-weight: 600;
   font-size: 1.5em;
 }
 
