@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=Barlow:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=Barlow:wght@400;600;700&display=swap");
 * {
   list-style: none;
   text-decoration: none;
@@ -6,12 +6,12 @@
   margin: 0;
   box-sizing: border-box;
 }
-$bgcolor: #E9ECEF;
+$bgcolor: #e9ecef;
 $darkest: #212529;
-$darkest2: #343A40;
-$accent: #8338EC;
-$accent2: #6247AA;
-$accent3: #A06CD5;
+$darkest2: #343a40;
+$accent: #8338ec;
+$accent2: #6247aa;
+$accent3: #a06cd5;
 $accent4: #7400b8;
 $red: #ef233c;
 $green: #0ead69;
@@ -58,8 +58,9 @@ $fourk: 2000px;
   max-width: $mobile;
 }
 
-html, body {
-  font-family: 'Barlow', sans-serif;
+html,
+body {
+  font-family: "Barlow", sans-serif;
 }
 
 body {
@@ -104,13 +105,13 @@ header {
   top: 0;
   left: 0;
   transform: translateX(50%);
-  background-image: url('images/h210i-01.png');
+  background-image: url("images/h210i-01.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position-y: center;
 }
 h3.branding {
-  padding: .75em 0;
+  padding: 0.75em 0;
   display: block;
   font-weight: 600;
   span {
@@ -120,7 +121,7 @@ h3.branding {
 }
 h1.title {
   font-size: 3em;
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
 }
 .case img {
   height: 15px;
@@ -128,12 +129,12 @@ h1.title {
 .description {
   line-height: 1.4em;
   width: 65%;
-  font-size: .85em;
+  font-size: 0.85em;
 }
-.poweredby{
-width: 42.5%;
-display: flex;
-justify-content: space-between;
+.poweredby {
+  width: 42.5%;
+  display: flex;
+  justify-content: space-between;
   img {
     height: 20px;
   }
@@ -141,9 +142,9 @@ justify-content: space-between;
 a.view {
   width: fit-content;
   display: block;
-  letter-spacing: .15em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  font-size: .8em;
+  font-size: 0.8em;
   font-weight: 600;
   background-color: $accent;
   border-radius: $radius;
@@ -157,11 +158,11 @@ section h2 {
 }
 
 h2.label {
-  letter-spacing: .05em;
-  color: #ADB5BD;
+  letter-spacing: 0.05em;
+  color: #adb5bd;
 }
 .overview h2 {
-  opacity: .25;
+  opacity: 0.25;
 }
 .overview ul {
   padding-bottom: 1.5em;
@@ -172,9 +173,9 @@ h2.label {
     flex-direction: column;
     align-items: center;
     span.sub {
-      margin: .75em 0;
-      font-size: .65em;
-      opacity: .45;
+      margin: 0.75em 0;
+      font-size: 0.65em;
+      opacity: 0.45;
     }
     span.main {
       font-size: 1.1em;
@@ -186,7 +187,7 @@ h2.label {
 section.parts {
   padding: 1.5em 0;
   h3.type {
-    font-size: .8em;
+    font-size: 0.8em;
     margin: 1em 0;
     text-transform: uppercase;
   }
@@ -203,55 +204,55 @@ section.parts {
   color: $darkest;
   border-radius: $radius;
   background-color: white;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   margin: 1em 0;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   &:hover {
-    box-shadow: 0 0 2em 0 rgba($color: $darkest, $alpha: .2);
-    transition: all .3s ease;
+    box-shadow: 0 0 2em 0 rgba($color: $darkest, $alpha: 0.2);
+    transition: all 0.3s ease;
   }
   i {
-    padding-right: .35em;
+    padding-right: 0.35em;
   }
-  .thumbnail { 
+  .thumbnail {
     cursor: pointer;
-    margin: .5em 0;
+    margin: 0.5em 0;
     width: 100%;
     background-size: contain;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
   }
   .product-block {
     margin-left: 1.5em;
     div {
-      margin: .5em 0;
+      margin: 0.5em 0;
     }
     span {
-      margin: .25em 0;
+      margin: 0.25em 0;
       display: block;
       font-weight: 600;
-      font-size: .8em;
+      font-size: 0.8em;
       a {
         color: $accent3;
       }
     }
     .sub {
       font-weight: 600;
-      opacity: .75;
+      opacity: 0.75;
     }
     .green {
       color: $green;
     }
     .title-block {
       h1 {
-        margin-bottom: .25em;
+        margin-bottom: 0.25em;
         font-size: 1em;
       }
       h3 {
-        opacity: .5;
+        opacity: 0.5;
         font-weight: 600;
-        font-size: .75em;
+        font-size: 0.75em;
       }
     }
     .flex-block {
@@ -259,6 +260,7 @@ section.parts {
       align-items: center;
     }
     .price-block {
+      display: flex;
       h2 {
         color: $accent;
         font-weight: 600;
@@ -271,29 +273,46 @@ section.parts {
   }
 }
 
+section.total-cost {
+  padding-bottom: 3em;
+  .cost-block {
+    padding: .25em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .total-pricing {
+    color: $accent;
+  }
+  h2.cost-left {
+    color: rgba($color: $darkest2, $alpha: .75);
+    font-size: 0.9em;
+  }
+}
+
 //all thumbnails
 
 #cpu {
-  background-image: url('images/ryzen-3700x.jpg');
+  background-image: url("images/ryzen-3700x.jpg");
 }
 #aio {
-  background-image: url('images/kraken.png');
+  background-image: url("images/kraken.png");
 }
 #mobo {
-  background-image: url('images/asus-rogstrix-b550i.png');
+  background-image: url("images/asus-rogstrix-b550i.png");
 }
 #ram {
-  background-image: url('images/corsair-vengence-lpx.png');
+  background-image: url("images/corsair-vengence-lpx.png");
 }
 #nvme {
-  background-image: url('images/samsung-evo970.jpg');
+  background-image: url("images/samsung-evo970.jpg");
 }
 #hdd {
-  background-image: url('images/seagate-barracuda.jpg');
+  background-image: url("images/seagate-barracuda.jpg");
 }
 #case {
-  background-image: url('images/h210i.png');
+  background-image: url("images/h210i.png");
 }
 #psu {
-  background-image: url('images/evga-supernova.png');
+  background-image: url("images/evga-supernova.png");
 }
