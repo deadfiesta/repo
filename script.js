@@ -42,6 +42,9 @@ $('#cpu').click(() => {
 $('#aio').click(() => {
     window.open("https://www.nzxt.com/products/kraken-x53", "_blank")
 });
+$('.branding').click(() => {
+    window.open("https://deadfiesta.studio/")
+})
 
 //gsap events
 gsap.from(nzxtCase, {
@@ -51,14 +54,13 @@ gsap.from(nzxtCase, {
     ease: "power4.out",
 });
 gsap.from(heroText, {
-    duration: 1,
-    x: "-=100",
+    duration: 2,
     opacity: 0,
 } )
 
 gsap.from(descriptionText, {
     duration: 2,
     opacity: 0,
-    delay: .25,
+    delay: .35,
 })
 

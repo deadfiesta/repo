@@ -12,7 +12,7 @@
   z-index: 3;
   width: 85%;
   margin: 0 auto;
-  max-width: 414px;
+  max-width: 1024px;
 }
 
 html,
@@ -51,6 +51,12 @@ header {
   height: 50vh;
 }
 
+@media (min-width: 768px) {
+  .hero {
+    height: 55vh;
+  }
+}
+
 .hero-left {
   position: relative;
   z-index: 10;
@@ -83,7 +89,16 @@ header {
   background-position-y: center;
 }
 
+@media (min-width: 1024px) {
+  .hero-right {
+    -webkit-transform: none;
+            transform: none;
+    background-position-x: right;
+  }
+}
+
 h3.branding {
+  cursor: pointer;
   padding: 0.75em 0;
   display: block;
   font-weight: 600;
@@ -99,14 +114,34 @@ h1.title {
   letter-spacing: 0.04em;
 }
 
+@media (min-width: 1024px) {
+  h1.title {
+    font-size: 4em;
+  }
+}
+
+.case .nzxt-brand {
+  border-radius: 6px;
+  display: inline-block;
+  padding: .5em .75em;
+  background-color: #6247aa;
+}
+
 .case img {
-  height: 15px;
+  height: 10px;
 }
 
 .description {
   line-height: 1.4em;
   width: 65%;
   font-size: 0.85em;
+}
+
+@media (min-width: 1024px) {
+  .description {
+    width: 52.5%;
+    font-size: 1.2em;
+  }
 }
 
 .poweredby {
@@ -119,8 +154,20 @@ h1.title {
           justify-content: space-between;
 }
 
+@media (min-width: 768px) {
+  .poweredby {
+    width: 25%;
+  }
+}
+
 .poweredby img {
   height: 20px;
+}
+
+@media (min-width: 1024px) {
+  .poweredby img {
+    height: 30px;
+  }
 }
 
 a.view {
@@ -149,16 +196,40 @@ h2.label {
   color: #adb5bd;
 }
 
+@media (min-width: 1024px) {
+  h2.label {
+    padding: .5em 0;
+    font-size: 1.8em;
+    opacity: .75;
+  }
+}
+
 .overview h2 {
   opacity: 0.25;
 }
 
 .overview ul {
   padding-bottom: 1.5em;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.overview ul li.hide-mobile {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .overview ul li.hide-mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .overview ul li {
@@ -172,11 +243,20 @@ h2.label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .overview ul li {
+    font-size: 1.5em;
+  }
 }
 
 .overview ul li span.sub {
   margin: 0.75em 0;
-  font-size: 0.65em;
+  font-size: .65em;
   opacity: 0.45;
 }
 
@@ -185,18 +265,27 @@ h2.label {
   font-weight: 800;
 }
 
+.overview ul li span.divider {
+  width: 2px;
+  height: 40%;
+  background-color: #343a40;
+}
+
 section.parts {
   padding: 1.5em 0;
 }
 
 section.parts h3.type {
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 1em;
+  color: white;
+  padding: .5em .75em;
+  background-color: rgba(52, 58, 64, 0.3);
+  letter-spacing: .2em;
   font-size: 0.8em;
-  margin: 1em 0;
+  font-weight: 600;
   text-transform: uppercase;
-}
-
-.fa-check-circle {
-  color: #0ead69;
 }
 
 .warranted {
@@ -211,10 +300,16 @@ section.parts h3.type {
   margin: 1em 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 2fr;
-      grid-template-columns: 1fr 2fr;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+@media (min-width: 1024px) {
+  .part {
+    padding: 1em 2em;
+  }
 }
 
 .part:hover {
@@ -225,19 +320,40 @@ section.parts h3.type {
 }
 
 .part i {
-  padding-right: 0.35em;
+  padding-right: .65em;
 }
 
 .part .thumbnail {
   cursor: pointer;
   margin: 0.5em 0;
   width: 100%;
+  background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
+@media (min-width: 1024px) {
+  .part .thumbnail {
+    min-height: 12.5em;
+  }
+}
+
 .part .product-block {
   margin-left: 1.5em;
+}
+
+@media (min-width: 1024px) {
+  .part .product-block {
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -ms-grid-rows: (1fr)[3];
+    -ms-grid-columns: 1fr 2em 1fr;
+        grid-template: repeat(3, 1fr)/1fr 2em 1fr;
+    font-size: 1.3em;
+  }
 }
 
 .part .product-block div {
@@ -252,7 +368,15 @@ section.parts h3.type {
 }
 
 .part .product-block span a {
-  color: #a06cd5;
+  color: #8338ec;
+}
+
+.part .product-block i.activated {
+  color: #0ead69;
+}
+
+.part .product-block i.unactivated {
+  color: rgba(52, 58, 64, 0.25);
 }
 
 .part .product-block .sub {
@@ -262,6 +386,22 @@ section.parts h3.type {
 
 .part .product-block .green {
   color: #0ead69;
+}
+
+.part .product-block .red {
+  color: #ef233c;
+}
+
+@media (min-width: 1024px) {
+  .part .product-block .title-block {
+    font-size: 1.25em;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-row: 1 / 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+  }
 }
 
 .part .product-block .title-block h1 {
@@ -284,10 +424,22 @@ section.parts h3.type {
           align-items: center;
 }
 
-.part .product-block .price-block {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.part .product-block .price-block p {
+  font-size: .6em;
+}
+
+@media (min-width: 1024px) {
+  .part .product-block .price-block {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    grid-row: 2 / 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+  }
 }
 
 .part .product-block .price-block h2 {
@@ -298,6 +450,43 @@ section.parts h3.type {
 
 .part .product-block .vendor-block {
   font-weight: 600;
+}
+
+.part .product-block .vendor-block i {
+  color: rgba(52, 58, 64, 0.85);
+}
+
+@media (min-width: 1024px) {
+  .part .product-block .vendor-block {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / 2;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3 / 4;
+  }
+}
+
+@media (min-width: 1024px) {
+  .part .product-block .purchase-block {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3 / 4;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3 / 4;
+  }
+}
+
+@media (min-width: 1024px) {
+  .part .product-block .warranty-block {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/ 3;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3 / 4;
+  }
 }
 
 section.total-cost {
@@ -327,7 +516,7 @@ section.total-cost h2.cost-left {
 }
 
 #cpu {
-  background-image: url("images/ryzen-3700x.jpg");
+  background-image: url("images/ryzen-3700x.png");
 }
 
 #aio {
@@ -343,7 +532,7 @@ section.total-cost h2.cost-left {
 }
 
 #nvme {
-  background-image: url("images/samsung-evo970.jpg");
+  background-image: url("images/samsung-evo970.png");
 }
 
 #hdd {
@@ -356,5 +545,13 @@ section.total-cost h2.cost-left {
 
 #psu {
   background-image: url("images/evga-supernova.png");
+}
+
+#psu {
+  background-image: url("images/evga-supernova.png");
+}
+
+#gpu {
+  background-image: url("images/rtx-3080-founders-edition.png");
 }
 /*# sourceMappingURL=main.css.map */

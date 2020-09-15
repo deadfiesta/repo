@@ -6,6 +6,7 @@
   margin: 0;
   box-sizing: border-box;
 }
+$light: #e1e5ee;
 $bgcolor: #e9ecef;
 $darkest: #212529;
 $darkest2: #343a40;
@@ -15,6 +16,7 @@ $accent3: #a06cd5;
 $accent4: #7400b8;
 $red: #ef233c;
 $green: #0ead69;
+$green2: #83e377;
 $radius: 6px;
 $mobile: 414px;
 $tablet: 768px;
@@ -55,7 +57,7 @@ $fourk: 2000px;
   z-index: 3;
   width: 85%;
   margin: 0 auto;
-  max-width: $mobile;
+  max-width: $laptop;
 }
 
 html,
@@ -87,6 +89,9 @@ header {
 .hero {
   position: relative;
   height: 50vh;
+  @include tablet {
+    height: 55vh;
+  }
 }
 .hero-left {
   position: relative;
@@ -109,8 +114,13 @@ header {
   background-size: contain;
   background-repeat: no-repeat;
   background-position-y: center;
+  @include laptop {
+    transform: none;
+    background-position-x: right;
+  }
 }
 h3.branding {
+  cursor: pointer;
   padding: 0.75em 0;
   display: block;
   font-weight: 600;
@@ -122,21 +132,40 @@ h3.branding {
 h1.title {
   font-size: 3em;
   letter-spacing: 0.04em;
+  @include laptop {
+    font-size: 4em;
+  }
+}
+.case .nzxt-brand {
+  border-radius: $radius;
+  display: inline-block;
+  padding: .5em .75em;
+  background-color: $accent2;
 }
 .case img {
-  height: 15px;
+  height: 10px;
 }
 .description {
   line-height: 1.4em;
   width: 65%;
   font-size: 0.85em;
+  @include laptop {
+    width: 52.5%;
+    font-size: 1.2em
+  }
 }
 .poweredby {
   width: 42.5%;
   display: flex;
   justify-content: space-between;
+  @include tablet {
+    width: 25%;
+  }
   img {
     height: 20px;
+    @include laptop {
+      height: 30px;
+    }
   }
 }
 a.view {
@@ -160,26 +189,47 @@ section h2 {
 h2.label {
   letter-spacing: 0.05em;
   color: #adb5bd;
+  @include laptop {
+    padding: .5em 0;
+    font-size: 1.8em;
+    opacity: .75;
+  }
 }
 .overview h2 {
   opacity: 0.25;
 }
 .overview ul {
   padding-bottom: 1.5em;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  li.hide-mobile {
+    display: none;
+    @include tablet {
+      display: flex;
+    }
+  }
   li {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    @include laptop {
+      font-size: 1.5em;
+    }
     span.sub {
       margin: 0.75em 0;
-      font-size: 0.65em;
+      font-size: .65em;
       opacity: 0.45;
     }
     span.main {
       font-size: 1.1em;
       font-weight: 800;
+    }
+    span.divider {
+      width: 2px;
+      height: 40%;
+      background-color: $darkest2;
     }
   }
 }
@@ -187,15 +237,21 @@ h2.label {
 section.parts {
   padding: 1.5em 0;
   h3.type {
+    border-radius: $radius;
+    display: inline-block;
+    margin-top: 1em;
+    color: white;
+    padding: .5em .75em;
+    // background-color: $accent;
+    background-color: rgba($color: $darkest2, $alpha: .3);
+    letter-spacing: .2em;
     font-size: 0.8em;
-    margin: 1em 0;
+    font-weight: 600;
+
     text-transform: uppercase;
   }
 }
 
-.fa-check-circle {
-  color: $green;
-}
 .warranted {
   color: $accent3;
 }
@@ -207,24 +263,37 @@ section.parts {
   padding: 0.5em 1em;
   margin: 1em 0;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 3fr;
   transition: all 0.3s ease;
+  @include laptop {
+    padding: 1em 2em;
+  }
   &:hover {
     box-shadow: 0 0 2em 0 rgba($color: $darkest, $alpha: 0.2);
     transition: all 0.3s ease;
   }
   i {
-    padding-right: 0.35em;
+    padding-right: .65em;
   }
   .thumbnail {
     cursor: pointer;
     margin: 0.5em 0;
     width: 100%;
+    background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
+    @include laptop {
+      min-height: 12.5em;
+    }
   }
   .product-block {
     margin-left: 1.5em;
+    @include laptop {
+      display: grid;
+      align-items: flex-start;
+      grid-template: repeat(3, 1fr) / 1fr 2em 1fr;
+      font-size: 1.3em;
+    }
     div {
       margin: 0.5em 0;
     }
@@ -234,8 +303,14 @@ section.parts {
       font-weight: 600;
       font-size: 0.8em;
       a {
-        color: $accent3;
+        color: $accent;
       }
+    }
+    i.activated {
+      color: $green;
+    }
+    i.unactivated {
+      color: rgba($color: $darkest2, $alpha: .25)
     }
     .sub {
       font-weight: 600;
@@ -244,7 +319,15 @@ section.parts {
     .green {
       color: $green;
     }
+    .red {
+      color: $red;
+    }
     .title-block {
+      @include laptop {
+        font-size: 1.25em;
+        grid-row: 1 / 3;
+        grid-column: 1 / 2;
+      }
       h1 {
         margin-bottom: 0.25em;
         font-size: 1em;
@@ -257,10 +340,17 @@ section.parts {
     }
     .flex-block {
       display: flex;
-      align-items: center;
+      align-items: center
     }
     .price-block {
-      display: flex;
+      p {
+        font-size: .6em;
+      }
+      @include laptop {
+        align-self: center;
+        grid-row: 2 / 4;
+        grid-column: 1 / 2;
+      }
       h2 {
         color: $accent;
         font-weight: 600;
@@ -269,8 +359,28 @@ section.parts {
     }
     .vendor-block {
       font-weight: 600;
+      i {
+        color: rgba($color: $darkest2, $alpha: .85)
+      }
+      @include laptop {
+        grid-row: 1 / 2;
+        grid-column: 3 / 4;
+      }
+    }
+    .purchase-block {
+      @include laptop {
+        grid-row: 3 / 4;
+        grid-column: 3 / 4;
+      }
+    }
+    .warranty-block {
+      @include laptop {
+        grid-row: 2/ 3;
+        grid-column: 3 / 4;
+      }
     }
   }
+
 }
 
 section.total-cost {
@@ -293,7 +403,7 @@ section.total-cost {
 //all thumbnails
 
 #cpu {
-  background-image: url("images/ryzen-3700x.jpg");
+  background-image: url("images/ryzen-3700x.png");
 }
 #aio {
   background-image: url("images/kraken.png");
@@ -305,7 +415,7 @@ section.total-cost {
   background-image: url("images/corsair-vengence-lpx.png");
 }
 #nvme {
-  background-image: url("images/samsung-evo970.jpg");
+  background-image: url("images/samsung-evo970.png");
 }
 #hdd {
   background-image: url("images/seagate-barracuda.jpg");
@@ -315,4 +425,10 @@ section.total-cost {
 }
 #psu {
   background-image: url("images/evga-supernova.png");
+}
+#psu {
+  background-image: url("images/evga-supernova.png");
+}
+#gpu {
+  background-image: url("images/rtx-3080-founders-edition.png");
 }
