@@ -16,6 +16,7 @@ $accent4: #7400b8;
 $red: #ef233c;
 $green: #0ead69;
 $radius: 6px;
+$mobile: 414px;
 $tablet: 768px;
 $laptop: 1024px;
 $desktop: 1400px;
@@ -54,7 +55,7 @@ $fourk: 2000px;
   z-index: 3;
   width: 85%;
   margin: 0 auto;
-  max-width: 414px;
+  max-width: $mobile;
 }
 
 html, body {
@@ -104,7 +105,7 @@ header {
   left: 0;
   transform: translateX(50%);
   background-image: url('images/h210i-01.png');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position-y: center;
 }
@@ -206,6 +207,11 @@ section.parts {
   margin: 1em 0;
   display: grid;
   grid-template-columns: 1fr 2fr;
+  transition: all .3s ease;
+  &:hover {
+    box-shadow: 0 0 2em 0 rgba($color: $darkest, $alpha: .2);
+    transition: all .3s ease;
+  }
   i {
     padding-right: .35em;
   }
