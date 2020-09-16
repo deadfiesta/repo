@@ -19,7 +19,7 @@ $('.pricing').each(function() {
     }
 });
 const cost = (Math.round(sum*100)/100).toFixed(2);
-$('.total-pricing').html("S$"+cost);
+$('.total-pricing').html(cost);
 //cal total purchased 
 $('.purchased').each(function() {
     var val = $.trim( $(this).text() );
@@ -31,9 +31,9 @@ $('.purchased').each(function() {
     }
 });
 const bought = (Math.round(buy*100)/100).toFixed(2);
-$('.total-purchased').html("S$"+bought);
+$('.total-purchased').html(bought);
 
-$('.pricing').prepend("S$");
+// $('.pricing').prepend("S$");
 
 //click events
 $('#cpu').click(() => {
@@ -46,21 +46,22 @@ $('.branding').click(() => {
     window.open("https://deadfiesta.studio/")
 })
 
-//gsap events
-gsap.from(nzxtCase, {
-    duration: 2,
-    x: "+=100",
-    opacity: 0,
-    ease: "power4.out",
-});
-gsap.from(heroText, {
-    duration: 2,
-    opacity: 0,
-} )
+//scrollreveal events
+var slideUp = {
+    distance: '5em',
+    origin: 'bottom',
+    opacity: '0',
+}
 
-gsap.from(descriptionText, {
-    duration: 2,
-    opacity: 0,
-    delay: .35,
-})
+var fadeIn = {
+    distance: '1em',
+    origin: 'bottom',
+    opacity: '0',
+}
+ScrollReveal().reveal('.type', fadeIn)
+ScrollReveal().reveal('.part', slideUp)
 
+//counterup 
+$('.pricing').counterUp();
+$('.total-pricing').counterUp();
+$('.total-purchased').counterUp();
