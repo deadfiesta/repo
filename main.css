@@ -396,13 +396,26 @@ section.parts h3.type {
   border-radius: 6px;
   display: inline-block;
   margin-top: 1em;
-  color: white;
   padding: .5em .75em;
-  background-color: rgba(52, 58, 64, 0.3);
+  color: white;
   letter-spacing: .2em;
   font-size: 0.8em;
   font-weight: 600;
   text-transform: uppercase;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+section.parts h3.unselected {
+  background-color: rgba(52, 58, 64, 0.3);
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+section.parts h3.selected {
+  background-color: #8338ec;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .warranted {

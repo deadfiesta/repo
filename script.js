@@ -9,31 +9,29 @@ const priceTag = document.querySelector(".pricing");
 //cal total cost pricing
 var sum = 0;
 var buy = 0;
-$('.pricing').each(function() {
-    var val = $.trim( $(this).text() );
+$('.pricing').each(function () {
+    var val = $.trim($(this).text());
 
-    if ( val ) {
-        val = parseFloat( val.replace( /^\$/, "" ) );
+    if (val) {
+        val = parseFloat(val.replace(/^\$/, ""));
 
-        sum += !isNaN( val ) ? val : 0;
+        sum += !isNaN(val) ? val : 0;
     }
 });
-const cost = (Math.round(sum*100)/100).toFixed(2);
+const cost = (Math.round(sum * 100) / 100).toFixed(2);
 $('.total-pricing').html(cost);
 //cal total purchased 
-$('.purchased').each(function() {
-    var val = $.trim( $(this).text() );
+$('.purchased').each(function () {
+    var val = $.trim($(this).text());
 
-    if ( val ) {
-        val = parseFloat( val.replace( /^\$/, "" ) );
+    if (val) {
+        val = parseFloat(val.replace(/^\$/, ""));
 
-        buy += !isNaN( val ) ? val : 0;
+        buy += !isNaN(val) ? val : 0;
     }
 });
-const bought = (Math.round(buy*100)/100).toFixed(2);
+const bought = (Math.round(buy * 100) / 100).toFixed(2);
 $('.total-purchased').html(bought);
-
-// $('.pricing').prepend("S$");
 
 //click events
 $('#cpu').click(() => {
@@ -66,6 +64,18 @@ $('#evgasupernova').click(() => {
 $('#nzxth210i').click(() => {
     window.open("https://www.lazada.sg/products/nzxt-h210i-mini-tower-case-cam-powered-premium-mini-itx-case-i447424576-s1190472822.html?mp=1", "_blank")
 })
+
+//mouseover events
+$('.type').addClass('unselected');
+$('.part').hover(
+    function () {
+        var type = "#" + $(this).attr('type');
+        $(type).removeClass('unselected').addClass('selected');
+    }, function () {
+        var type = "#" + $(this).attr('type');
+        $(type).removeClass('selected').addClass('unselected');
+    }
+);
 
 //scrollreveal events
 var slideUp = {
