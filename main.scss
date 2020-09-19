@@ -95,6 +95,7 @@ $fourk: 2000px;
 
 html,
 body {
+  overflow-x: hidden;
   font-family: "Barlow", sans-serif;
 }
 
@@ -320,9 +321,6 @@ section.parts {
     font-size: 0.8em;
     font-weight: 600;
     text-transform: uppercase;
-    transition: all .3s ease;
-  }
-  h3.unselected {
     background-color: rgba($color: $darkest2, $alpha: .3);
     transition: all .3s ease;
   }
@@ -330,10 +328,18 @@ section.parts {
     background-color: $accent;
     transition: all .3s ease;
   }
+  h3.selectedhover {
+    background-color: $accent;
+    transition: all .3s ease;
+  }
 }
 
 .warranted {
   color: $accent3;
+}
+.part.selected {
+  box-shadow: 0 .5em 2em rgba($color: $accent, $alpha: .2);
+  transition: all 0.3s ease;
 }
 .part {
   color: $darkest;
@@ -348,7 +354,7 @@ section.parts {
     padding: 1em 2em;
   }
   &:hover {
-    box-shadow: 0 0 2em 0 rgba($color: $darkest, $alpha: 0.2);
+    box-shadow: 0 .5em 2em rgba($color: $accent, $alpha: .2);
     transition: all 0.3s ease;
   }
   i {
@@ -587,7 +593,10 @@ section.total-cost {
   background-image: url("images/corsair-vengence-lpx.png");
 }
 #nvme {
-  background-image: url("images/samsung-evo970.png");
+  background-image: url("images/samsung-evo-970-plus.png");
+}
+#ssd {
+  background-image: url("images/samsung-evo-870.png");
 }
 #hdd {
   background-image: url("images/seagate-barracuda.jpg");

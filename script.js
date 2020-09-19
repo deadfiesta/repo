@@ -53,7 +53,10 @@ $('#corsairvengence').click(() => {
     window.open("https://www.lazada.sg/products/corsair-vengeance-lpx-32gb-2x16gb-ddr4-3600mhz-c18-amd-ryzen-dimm-desktop-memory-kit-black-cmk32gx4m2z3600c18-i706136909-s2209694374.html?mp=1&spm=spm%3Da2o42.order_details.item_title.1", "_blank")
 })
 $('#samsungevo970').click(() => {
-    window.open("https://www.amazon.sg/Samsung-NVMe-PCIe-MZ-V7E1T0BW-Black/dp/B07BN217QG/ref=sr_1_1?dchild=1&keywords=samsung+970+evo+1tb&qid=1600333780&sr=8-1", "_blank")
+    window.open("https://www.lazada.sg/products/lowest-price-guranteed-samsung-970-evo-plus-500gb1tb2tb-nvme-m2-ssd-i990054906-s3590612800.html?mp=1&spm=spm%3Da2o42.order_details.item_title.1", "_blank")
+})
+$('#samsungevo870').click(() => {
+    window.open("https://www.amazon.sg/gp/product/B0786QNSBD/ref=ox_sc_act_title_1?smid=ARPIJN329XQ0D&psc=1", "_blank")
 })
 $('#seagatebarracuda').click(() => {
     window.open("https://www.lazada.sg/products/seagate-barracuda-st2000dm008-2tb-7200-rpm-256mb-cache-sata-60gbs-35-hard-drive-bare-drive-i324910907-s676724344.html?mp=1", "_blank")
@@ -66,14 +69,14 @@ $('#nzxth210i').click(() => {
 })
 
 //mouseover events
-$('.type').addClass('unselected');
+// $('.type').addClass('unselected');
 $('.part').hover(
     function () {
         var type = "#" + $(this).attr('type');
-        $(type).removeClass('unselected').addClass('selected');
+        $(type).addClass('selectedhover');
     }, function () {
         var type = "#" + $(this).attr('type');
-        $(type).removeClass('selected').addClass('unselected');
+        $(type).removeClass('selectedhover');
     }
 );
 
@@ -89,10 +92,100 @@ var fadeIn = {
     origin: 'bottom',
     opacity: '0',
 }
-ScrollReveal().reveal('.type', fadeIn)
-ScrollReveal().reveal('.part', slideUp)
+// ScrollReveal().reveal('.type', fadeIn)
+// ScrollReveal().reveal('.part', slideUp)
 
 //counterup 
-$('.pricing').counterUp();
+// $('.pricing').counterUp();
 $('.total-pricing').counterUp();
 $('.total-purchased').counterUp();
+
+//scrollmagic events
+//init controller
+var cpu, aio, mobo, gpu, ram, hdd, psu, chas;
+
+function calculateHeight() {
+    var type = $('.type').height() + parseInt($('.type').css('margin-top')) + parseInt($('.type').css('margin-bottom')) + parseInt($('.type').css('padding-top')) + parseInt($('.type').css('padding-bottom'));
+    var pad = parseInt($('.part').css('padding-top')) + parseInt($('.part').css('padding-bottom')) + parseInt($('.part').css('margin-top')) + parseInt($('.part').css('margin-bottom'));
+    var spaces = type + pad;
+    cpu = spaces + $('#processor').height();
+    aio = spaces + $('#liquidcooler').height();
+    mobo = spaces + $('#motherboard').height();
+    gpu = spaces + $('#graphics').height();
+    ram = spaces + $('#memory').height();
+    hdd = type + $('#storage-1').height() + pad + $('#storage-2').height() + pad + $('#storage-3').height() + pad;
+    psu = spaces + $('#powersupply').height();
+    chas = spaces + $('#chassis').height();
+}
+
+const scrollMagic = () => {
+    var controller = new ScrollMagic.Controller({});
+
+    new ScrollMagic.Scene({
+        triggerElement: "#typecpu", duration: cpu
+    })
+        .setClassToggle("#typecpu, #processor", "selected")
+        .addTo(controller)
+        // .addIndicators();
+
+    new ScrollMagic.Scene({
+        triggerElement: "#typeaio", duration: aio
+    })
+        .setClassToggle("#typeaio, #liquidcooler", "selected")
+        .addTo(controller)
+        // .addIndicators();
+
+    new ScrollMagic.Scene({
+        triggerElement: "#typemobo", duration: mobo
+    })
+        .setClassToggle("#typemobo, #motherboard", "selected")
+        .addTo(controller)
+        // .addIndicators();
+
+    new ScrollMagic.Scene({
+        triggerElement: "#typegpu", duration: gpu
+    })
+        .setClassToggle("#typegpu, #graphics", "selected")
+        .addTo(controller)
+        // .addIndicators();
+
+    new ScrollMagic.Scene({
+        triggerElement: "#typeram", duration: ram
+    })
+        .setClassToggle("#typeram, #memory", "selected")
+        .addTo(controller)
+        // .addIndicators();
+
+    new ScrollMagic.Scene({
+        triggerElement: "#typehdd", duration: hdd
+    })
+        .setClassToggle("#typehdd, #storage-1, #storage-2, #storage-3", "selected")
+        .addTo(controller)
+        // .addIndicators();
+
+    new ScrollMagic.Scene({
+        triggerElement: "#typepsu", duration: psu
+    })
+        .setClassToggle("#typepsu, #powersupply", "selected")
+        .addTo(controller)
+        // .addIndicators();
+
+    new ScrollMagic.Scene({
+        triggerElement: "#typecase", duration: chas
+    })
+        .setClassToggle("#typecase, #chassis", "selected")
+        .addTo(controller)
+        // .addIndicators();
+
+
+}
+
+$(document).ready(function () {
+    calculateHeight();
+    scrollMagic();
+})
+
+$(window).resize(function() {
+    calculateHeight();
+    scrollMagic();
+})

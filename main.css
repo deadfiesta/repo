@@ -91,6 +91,7 @@
 
 html,
 body {
+  overflow-x: hidden;
   font-family: "Barlow", sans-serif;
 }
 
@@ -402,11 +403,6 @@ section.parts h3.type {
   font-size: 0.8em;
   font-weight: 600;
   text-transform: uppercase;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
-}
-
-section.parts h3.unselected {
   background-color: rgba(52, 58, 64, 0.3);
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
@@ -418,8 +414,21 @@ section.parts h3.selected {
   transition: all .3s ease;
 }
 
+section.parts h3.selectedhover {
+  background-color: #8338ec;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
 .warranted {
   color: #a06cd5;
+}
+
+.part.selected {
+  -webkit-box-shadow: 0 0.5em 2em rgba(131, 56, 236, 0.2);
+          box-shadow: 0 0.5em 2em rgba(131, 56, 236, 0.2);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .part {
@@ -443,8 +452,8 @@ section.parts h3.selected {
 }
 
 .part:hover {
-  -webkit-box-shadow: 0 0 2em 0 rgba(33, 37, 41, 0.2);
-          box-shadow: 0 0 2em 0 rgba(33, 37, 41, 0.2);
+  -webkit-box-shadow: 0 0.5em 2em rgba(131, 56, 236, 0.2);
+          box-shadow: 0 0.5em 2em rgba(131, 56, 236, 0.2);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -779,7 +788,11 @@ section.total-cost h2.cost-left {
 }
 
 #nvme {
-  background-image: url("images/samsung-evo970.png");
+  background-image: url("images/samsung-evo-970-plus.png");
+}
+
+#ssd {
+  background-image: url("images/samsung-evo-870.png");
 }
 
 #hdd {
