@@ -93,7 +93,7 @@ var fadeIn = {
     opacity: '0',
 }
 // ScrollReveal().reveal('.type', fadeIn)
-// ScrollReveal().reveal('.part', slideUp)
+ScrollReveal().reveal('.part', slideUp)
 
 //counterup 
 // $('.pricing').counterUp();
@@ -102,7 +102,7 @@ $('.total-purchased').counterUp();
 
 //scrollmagic events
 //init controller
-var cpu, aio, mobo, gpu, ram, hdd, psu, chas;
+var cpu, aio, mobo, gpu, ram, hdd, psu, chas, acc;
 
 function calculateHeight() {
     var type = $('.type').height() + parseInt($('.type').css('margin-top')) + parseInt($('.type').css('margin-bottom')) + parseInt($('.type').css('padding-top')) + parseInt($('.type').css('padding-bottom'));
@@ -116,6 +116,7 @@ function calculateHeight() {
     hdd = type + $('#storage-1').height() + pad + $('#storage-2').height() + pad + $('#storage-3').height() + pad;
     psu = spaces + $('#powersupply').height();
     chas = spaces + $('#chassis').height();
+    acc = spaces + $('#accessories').height();
 }
 
 const scrollMagic = () => {
@@ -174,6 +175,13 @@ const scrollMagic = () => {
         triggerElement: "#typecase", duration: chas
     })
         .setClassToggle("#typecase, #chassis", "selected")
+        .addTo(controller)
+        // .addIndicators();
+
+    new ScrollMagic.Scene({
+        triggerElement: "#typeaccessories", duration: acc
+    })
+        .setClassToggle("#typeaccessories, #accessories", "selected")
         .addTo(controller)
         // .addIndicators();
 

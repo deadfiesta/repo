@@ -425,8 +425,8 @@ section.parts h3.selectedhover {
 }
 
 .part.selected {
-  -webkit-box-shadow: 0 0.5em 2em rgba(131, 56, 236, 0.2);
-          box-shadow: 0 0.5em 2em rgba(131, 56, 236, 0.2);
+  -webkit-box-shadow: 0 0.5em 4em rgba(33, 37, 41, 0.5);
+          box-shadow: 0 0.5em 4em rgba(33, 37, 41, 0.5);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -452,8 +452,8 @@ section.parts h3.selectedhover {
 }
 
 .part:hover {
-  -webkit-box-shadow: 0 0.5em 2em rgba(131, 56, 236, 0.2);
-          box-shadow: 0 0.5em 2em rgba(131, 56, 236, 0.2);
+  -webkit-box-shadow: 0 0.5em 4em rgba(33, 37, 41, 0.5);
+          box-shadow: 0 0.5em 4em rgba(33, 37, 41, 0.5);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -639,6 +639,10 @@ section.parts h3.selectedhover {
   background-image: url("images/pctheme.png");
 }
 
+.part .product-block .vendor-block .bizgram {
+  background-image: url("images/bizgram.jpg");
+}
+
 .part .product-block .vendor-block .prime {
   width: 53px;
   height: 17px;
@@ -813,5 +817,9 @@ section.total-cost h2.cost-left {
 
 #gpu {
   background-image: url("images/rtx3070.jpg");
+}
+
+#nzxtusbhub {
+  background-image: url("images/nzxtusbhub.png");
 }
 /*# sourceMappingURL=main.css.map */

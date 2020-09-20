@@ -338,7 +338,7 @@ section.parts {
   color: $accent3;
 }
 .part.selected {
-  box-shadow: 0 .5em 2em rgba($color: $accent, $alpha: .2);
+  box-shadow: 0 .5em 4em rgba($color: $darkest, $alpha: .5);
   transition: all 0.3s ease;
 }
 .part {
@@ -354,7 +354,7 @@ section.parts {
     padding: 1em 2em;
   }
   &:hover {
-    box-shadow: 0 .5em 2em rgba($color: $accent, $alpha: .2);
+    box-shadow: 0 .5em 4em rgba($color: $darkest, $alpha: .5);
     transition: all 0.3s ease;
   }
   i {
@@ -489,6 +489,9 @@ section.parts {
       .pctheme {
         background-image: url("images/pctheme.png");
       }
+      .bizgram {
+        background-image: url('images/bizgram.jpg')
+      }
       .prime {
         width: 53px;
         height: 17px;
@@ -612,4 +615,7 @@ section.total-cost {
 }
 #gpu {
   background-image: url("images/rtx3070.jpg");
+}
+#nzxtusbhub {
+  background-image: url("images/nzxtusbhub.png");
 }
