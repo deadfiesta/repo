@@ -67,6 +67,9 @@ $('#evgasupernova').click(() => {
 $('#nzxth210i').click(() => {
     window.open("https://www.lazada.sg/products/nzxt-h210i-mini-tower-case-cam-powered-premium-mini-itx-case-i447424576-s1190472822.html?mp=1", "_blank")
 })
+$('#bequietsilentwings').click(() => {
+    window.open("https://www.lazada.sg/products/be-quiet-silent-wings-3-120mm-140-mm-pwm-fans-i426170115-s1090828642.html?", "_blank")
+})
 
 //mouseover events
 // $('.type').addClass('unselected');
@@ -102,7 +105,7 @@ $('.total-purchased').counterUp();
 
 //scrollmagic events
 //init controller
-var cpu, aio, mobo, gpu, ram, hdd, psu, chas, acc;
+var cpu, aio, mobo, gpu, ram, hdd, psu, chas, acc, fan;
 
 function calculateHeight() {
     var type = $('.type').height() + parseInt($('.type').css('margin-top')) + parseInt($('.type').css('margin-bottom')) + parseInt($('.type').css('padding-top')) + parseInt($('.type').css('padding-bottom'));
@@ -117,6 +120,7 @@ function calculateHeight() {
     psu = spaces + $('#powersupply').height();
     chas = spaces + $('#chassis').height();
     acc = spaces + $('#accessories').height();
+    fan = spaces +$('#fans').height();
 }
 
 const scrollMagic = () => {
@@ -182,6 +186,13 @@ const scrollMagic = () => {
         triggerElement: "#typeaccessories", duration: acc
     })
         .setClassToggle("#typeaccessories, #accessories", "selected")
+        .addTo(controller)
+        // .addIndicators();
+
+    new ScrollMagic.Scene({
+        triggerElement: "#typecasefan", duration: fan
+    })
+        .setClassToggle("#typecasefan, #fans", "selected")
         .addTo(controller)
         // .addIndicators();
 
