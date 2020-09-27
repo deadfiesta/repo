@@ -631,6 +631,14 @@ section.parts h3.selectedhover {
   background-image: url("images/viipc.png");
 }
 
+.part .product-block .vendor-block .cai {
+  background-image: url("images/cai.png");
+}
+
+.part .product-block .vendor-block .allstar {
+  background-image: url("images/allstar.png");
+}
+
 .part .product-block .vendor-block .dynacore {
   background-image: url("images/dynacore.png");
 }
@@ -641,6 +649,10 @@ section.parts h3.selectedhover {
 
 .part .product-block .vendor-block .bizgram {
   background-image: url("images/bizgram.jpg");
+}
+
+.part .product-block .vendor-block .carousell {
+  background-image: url("images/carousell.png");
 }
 
 .part .product-block .vendor-block .prime {
@@ -823,7 +835,15 @@ section.total-cost h2.cost-left {
   background-image: url("images/nzxtusbhub.png");
 }
 
-#silentwings {
+#lg34gn850 {
+  background-image: url("images/lg34gn850.jpg");
+}
+
+#vivoarm {
+  background-image: url("images/vivo-arm.png");
+}
+
+.silentwings {
   background-image: url("images/silent-wings.png");
 }
 /*# sourceMappingURL=main.css.map */

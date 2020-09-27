@@ -44,7 +44,7 @@ $('.branding').click(() => {
     window.open("https://deadfiesta.studio/")
 })
 $('#ryzen3700').click(() => {
-    window.open("https://www.amazon.sg/AMD-Ryzen-3700X-16-Thread-Processor/dp/B07SXMZLPK/ref=sr_1_1?dchild=1&keywords=ryzen+3700x&qid=1600333382&sr=8-1", "_blank")
+    window.open("https://sg.carousell.com/p/amd-ryzen-7-3700x-brand-new-1037325300/", "_blank")
 })
 $('#nzxtm22').click(() => {
     window.open("https://www.amazon.sg/NZXT-Kraken-120mm-All-One/dp/B079JF6NDC/ref=sr_1_1?dchild=1&keywords=kraken+m22&qid=1600318203&sr=8-1&load-pop-up=1&", "_blank")
@@ -53,7 +53,7 @@ $('#corsairvengence').click(() => {
     window.open("https://www.lazada.sg/products/corsair-vengeance-lpx-32gb-2x16gb-ddr4-3600mhz-c18-amd-ryzen-dimm-desktop-memory-kit-black-cmk32gx4m2z3600c18-i706136909-s2209694374.html?mp=1&spm=spm%3Da2o42.order_details.item_title.1", "_blank")
 })
 $('#samsungevo970').click(() => {
-    window.open("https://www.lazada.sg/products/lowest-price-guranteed-samsung-970-evo-plus-500gb1tb2tb-nvme-m2-ssd-i990054906-s3590612800.html?mp=1&spm=spm%3Da2o42.order_details.item_title.1", "_blank")
+    window.open("https://www.lazada.sg/products/samsung-970-evo-plus-250gb-500gb-1tb-pcie-nvme-m2-internal-ssd-i320972666-s1679804880.html?mp=1", "_blank")
 })
 $('#samsungevo870').click(() => {
     window.open("https://www.amazon.sg/gp/product/B0786QNSBD/ref=ox_sc_act_title_1?smid=ARPIJN329XQ0D&psc=1", "_blank")
@@ -69,6 +69,15 @@ $('#nzxth210i').click(() => {
 })
 $('#bequietsilentwings').click(() => {
     window.open("https://www.lazada.sg/products/be-quiet-silent-wings-3-120mm-140-mm-pwm-fans-i426170115-s1090828642.html?", "_blank")
+})
+$('#lgultragear').click(() => {
+    window.open("https://www.lazada.sg/products/delivery-in-24-hoursdynacore-lg-ultragear-34gn850-b-34-qhd-nano-ips-gaming-monitor-with-nvidia-g-sync-compatible-lg-34gn850-i797140600-s2626660769.html?spm=a2o42.searchlist.list.3.1d3a87cdR18n13&search=1", '_blank')
+})
+$('.bequietsilentwings').click(() => {
+    window.open("https://www.allstars.com.sg/be-quiet-silent-wings-3-140mm-pwm-high-speed-14cm-chassis-case-fan-bl071-1600rpm-28-1dba-77-5cfm-2-16mmh-2-0-300k-hrs-wrty-1-yr-with-distributor/", "_blank")
+})
+$('#vivoarmlink').click(() => {
+    window.open("https://www.amazon.sg/VIVO-Premium-Aluminum-Adjustable-MOUNT-G200B/dp/B07HZ35QZL/ref=sr_1_2?dchild=1&keywords=vivo%2Bwall%2Bmount&qid=1601177883&sr=8-2&th=1&psc=1", "_blank")
 })
 
 //mouseover events
@@ -105,7 +114,7 @@ $('.total-purchased').counterUp();
 
 //scrollmagic events
 //init controller
-var cpu, aio, mobo, gpu, ram, hdd, psu, chas, acc, fan;
+var cpu, aio, mobo, gpu, ram, hdd, psu, chas, acc, fan, monitor;
 
 function calculateHeight() {
     var type = $('.type').height() + parseInt($('.type').css('margin-top')) + parseInt($('.type').css('margin-bottom')) + parseInt($('.type').css('padding-top')) + parseInt($('.type').css('padding-bottom'));
@@ -120,7 +129,8 @@ function calculateHeight() {
     psu = spaces + $('#powersupply').height();
     chas = spaces + $('#chassis').height();
     acc = spaces + $('#accessories').height();
-    fan = spaces +$('#fans').height();
+    fan = type +$('#fan-1').height() + pad +$('#fan-2').height();
+    monitor = type + $('#monitor').height() + pad + $('#monitor-arm').height();
 }
 
 const scrollMagic = () => {
@@ -193,6 +203,13 @@ const scrollMagic = () => {
         triggerElement: "#typecasefan", duration: fan
     })
         .setClassToggle("#typecasefan, #fans", "selected")
+        .addTo(controller)
+        // .addIndicators();
+
+    new ScrollMagic.Scene({
+        triggerElement: "#typemonitor", duration: monitor
+    })
+        .setClassToggle("#typemonitor, #monitor", "selected")
         .addTo(controller)
         // .addIndicators();
 
