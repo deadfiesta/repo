@@ -474,6 +474,9 @@ section.parts {
         background-repeat: no-repeat;
         margin-right: .65em;
       }
+      .jy {
+        background-image: url('images/jy.png');
+      }
       .amazon {
         background-image: url("images/amazon.png");
       }
@@ -500,6 +503,9 @@ section.parts {
       }
       .carousell {
         background-image: url('images/carousell.png');
+      }
+      .shopee {
+       background-image: url('images/shopee.png') 
       }
       .prime {
         width: 53px;
@@ -631,8 +637,8 @@ section.total-cost {
 #lg34gn850 {
   background-image: url("images/lg34gn850.jpg");
 }
-#vivoarm {
-  background-image: url("images/vivo-arm.png");
+#fca800 {
+  background-image: url("images/FC-A800.png");
 }
 .silentwings {
   background-image: url("images/silent-wings.png");

@@ -56,7 +56,7 @@ $('#samsungevo970').click(() => {
     window.open("https://www.lazada.sg/products/samsung-970-evo-plus-250gb-500gb-1tb-pcie-nvme-m2-internal-ssd-i320972666-s1679804880.html?mp=1", "_blank")
 })
 $('#samsungevo870').click(() => {
-    window.open("https://www.amazon.sg/gp/product/B0786QNSBD/ref=ox_sc_act_title_1?smid=ARPIJN329XQ0D&psc=1", "_blank")
+    window.open("https://shopee.sg/product/262423255/4440939596", "_blank")
 })
 $('#seagatebarracuda').click(() => {
     window.open("https://www.lazada.sg/products/seagate-barracuda-st2000dm008-2tb-7200-rpm-256mb-cache-sata-60gbs-35-hard-drive-bare-drive-i324910907-s676724344.html?mp=1", "_blank")
@@ -76,8 +76,8 @@ $('#lgultragear').click(() => {
 $('.bequietsilentwings').click(() => {
     window.open("https://www.allstars.com.sg/be-quiet-silent-wings-3-140mm-pwm-high-speed-14cm-chassis-case-fan-bl071-1600rpm-28-1dba-77-5cfm-2-16mmh-2-0-300k-hrs-wrty-1-yr-with-distributor/", "_blank")
 })
-$('#vivoarmlink').click(() => {
-    window.open("https://www.amazon.sg/VIVO-Premium-Aluminum-Adjustable-MOUNT-G200B/dp/B07HZ35QZL/ref=sr_1_2?dchild=1&keywords=vivo%2Bwall%2Bmount&qid=1601177883&sr=8-2&th=1&psc=1", "_blank")
+$('#fca800').click(() => {
+    window.open("http://jiaying.com/catalog/brackets/monitor/wall/FC-A800.pdf", "_blank")
 })
 
 //mouseover events

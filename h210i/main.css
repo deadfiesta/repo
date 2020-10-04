@@ -619,6 +619,10 @@ section.parts h3.selectedhover {
   margin-right: .65em;
 }
 
+.part .product-block .vendor-block .jy {
+  background-image: url("images/jy.png");
+}
+
 .part .product-block .vendor-block .amazon {
   background-image: url("images/amazon.png");
 }
@@ -653,6 +657,10 @@ section.parts h3.selectedhover {
 
 .part .product-block .vendor-block .carousell {
   background-image: url("images/carousell.png");
+}
+
+.part .product-block .vendor-block .shopee {
+  background-image: url("images/shopee.png");
 }
 
 .part .product-block .vendor-block .prime {
@@ -839,8 +847,8 @@ section.total-cost h2.cost-left {
   background-image: url("images/lg34gn850.jpg");
 }
 
-#vivoarm {
-  background-image: url("images/vivo-arm.png");
+#fca800 {
+  background-image: url("images/FC-A800.png");
 }
 
 .silentwings {
