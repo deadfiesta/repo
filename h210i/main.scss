@@ -361,14 +361,20 @@ section.parts {
     padding-right: .65em;
   }
   .thumbnail {
+    position: relative;
     cursor: pointer;
     margin: 0.5em 0;
     width: 100%;
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
+    transition: all .2s ease;
     @include laptop {
       min-height: 10em;
+    }
+    &:hover {
+      transform: scale(1.1);
+      transition: all .2s ease;
     }
   }
   .product-block {
@@ -491,6 +497,9 @@ section.parts {
       }
       .allstar {
         background-image: url('images/allstar.png')
+      }
+      .techdeals {
+        background-image: url('images/techdeals.jpg')
       }
       .dynacore {
         background-image: url("images/dynacore.png")
@@ -642,4 +651,13 @@ section.total-cost {
 }
 .silentwings {
   background-image: url("images/silent-wings.png");
+}
+.silentwings120 {
+  background-image: url("images/silent-wings-120mm.png");
+}
+.tecwareflex {
+  background-image: url("images/tecware-flex.png");
+}
+#nzxthue2underglow {
+  background-image: url("images/hue2-underglow.png");
 }

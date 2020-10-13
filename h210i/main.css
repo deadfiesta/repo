@@ -463,18 +463,28 @@ section.parts h3.selectedhover {
 }
 
 .part .thumbnail {
+  position: relative;
   cursor: pointer;
   margin: 0.5em 0;
   width: 100%;
   background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
 }
 
 @media (min-width: 1024px) {
   .part .thumbnail {
     min-height: 10em;
   }
+}
+
+.part .thumbnail:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
 }
 
 .part .product-block {
@@ -641,6 +651,10 @@ section.parts h3.selectedhover {
 
 .part .product-block .vendor-block .allstar {
   background-image: url("images/allstar.png");
+}
+
+.part .product-block .vendor-block .techdeals {
+  background-image: url("images/techdeals.jpg");
 }
 
 .part .product-block .vendor-block .dynacore {
@@ -853,5 +867,17 @@ section.total-cost h2.cost-left {
 
 .silentwings {
   background-image: url("images/silent-wings.png");
+}
+
+.silentwings120 {
+  background-image: url("images/silent-wings-120mm.png");
+}
+
+.tecwareflex {
+  background-image: url("images/tecware-flex.png");
+}
+
+#nzxthue2underglow {
+  background-image: url("images/hue2-underglow.png");
 }
 /*# sourceMappingURL=main.css.map */

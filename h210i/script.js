@@ -38,7 +38,10 @@ $('#cpu').click(() => {
     window.open("https://www.amd.com/en/products/cpu/amd-ryzen-7-3700x", "_blank")
 });
 $('#aio').click(() => {
-    window.open("https://www.nzxt.com/products/kraken-x53", "_blank")
+    window.open("https://www.nzxt.com/products/kraken-m22", "_blank")
+});
+$('#motherboard').click(() => {
+    window.open("https://www.asus.com/sg/Motherboards/ROG-STRIX-B550-I-GAMING/", "_blank")
 });
 $('.branding').click(() => {
     window.open("https://deadfiesta.studio/")
@@ -76,8 +79,26 @@ $('#lgultragear').click(() => {
 $('.bequietsilentwings').click(() => {
     window.open("https://www.allstars.com.sg/be-quiet-silent-wings-3-140mm-pwm-high-speed-14cm-chassis-case-fan-bl071-1600rpm-28-1dba-77-5cfm-2-16mmh-2-0-300k-hrs-wrty-1-yr-with-distributor/", "_blank")
 })
+$('.tecwareflexpsu').click(() => {
+    window.open("https://shopee.sg/product/16343535/7645605058", "_blank")
+})
 $('#fca800').click(() => {
     window.open("http://jiaying.com/catalog/brackets/monitor/wall/FC-A800.pdf", "_blank")
+})
+$('#fan-1,#fan-2').click(() => {
+    window.open("https://www.bequiet.com/en/casefans/723", "_blank")
+})
+$('#fan-3,#fan-4').click(() => {
+    window.open("https://www.bequiet.com/en/casefans/724", "_blank")
+})
+$('#nzxtusbhub').click(() => {
+    window.open("https://www.nzxt.com/products/internal-usb-hub", "_blank")
+})
+$('.tecwareflex').click(() => {
+    window.open("https://www.tecware.co/flex", "_blank")
+})
+$('#nzxthue2underglow').click(() => {
+    window.open("https://www.nzxt.com/products/hue-2-underglow", "_blank")
 })
 
 //mouseover events
@@ -202,7 +223,7 @@ const scrollMagic = () => {
     new ScrollMagic.Scene({
         triggerElement: "#typecasefan", duration: fan
     })
-        .setClassToggle("#typecasefan, #fans", "selected")
+        .setClassToggle("#typecasefan, #fan-1,#fan-2,#fan-3,#fan-4", "selected")
         .addTo(controller)
         // .addIndicators();
 
