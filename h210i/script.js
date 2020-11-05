@@ -100,6 +100,15 @@ $('.tecwareflex').click(() => {
 $('#nzxthue2underglow').click(() => {
     window.open("https://www.nzxt.com/products/hue-2-underglow", "_blank")
 })
+$('#nzxthue2').click(() => {
+    window.open("https://www.amazon.sg/gp/product/B07GF4K7XB/ref=ppx_yo_dt_b_asin_image_o00_s00?ie=UTF8&psc=1", "_blank")
+})
+$('#nzxthue2led').click(() => {
+    window.open("https://www.nzxt.com/products/hue-2-led-strip-accessory", "_blank")
+})
+$('#nzxthue2ambient').click(() => {
+    window.open("https://shopee.sg/NZXT-HUE-2-AMBIENT-RGB-LIGHTING-KIT-AC-HUEHU-A2-i.209449600.4520824899", "_blank")
+})
 
 //mouseover events
 // $('.type').addClass('unselected');

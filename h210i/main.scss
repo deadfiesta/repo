@@ -516,6 +516,9 @@ section.parts {
       .shopee {
        background-image: url('images/shopee.png') 
       }
+      .etechpc {
+        background-image: url('images/etechpc.jpg');
+      }
       .prime {
         width: 53px;
         height: 17px;
@@ -660,4 +663,10 @@ section.total-cost {
 }
 #nzxthue2underglow {
   background-image: url("images/hue2-underglow.png");
+}
+#nzxthue2led {
+  background-image: url("images/hue2strip.png");
+}
+#hue2ambient {
+  background-image: url("images/hue2ambient.png");
 }

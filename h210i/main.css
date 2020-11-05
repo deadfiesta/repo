@@ -677,6 +677,10 @@ section.parts h3.selectedhover {
   background-image: url("images/shopee.png");
 }
 
+.part .product-block .vendor-block .etechpc {
+  background-image: url("images/etechpc.jpg");
+}
+
 .part .product-block .vendor-block .prime {
   width: 53px;
   height: 17px;
@@ -879,5 +883,13 @@ section.total-cost h2.cost-left {
 
 #nzxthue2underglow {
   background-image: url("images/hue2-underglow.png");
+}
+
+#nzxthue2led {
+  background-image: url("images/hue2strip.png");
+}
+
+#hue2ambient {
+  background-image: url("images/hue2ambient.png");
 }
 /*# sourceMappingURL=main.css.map */
