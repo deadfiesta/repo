@@ -116,9 +116,13 @@ header {
   left: 0;
   top: 0;
   width: 100%;
-  height: 3px;
-  background-image: -webkit-gradient(linear, left top, right top, from(#8338ec), color-stop(#6247aa), to(#a06cd5));
-  background-image: linear-gradient(to right, #8338ec, #6247aa, #a06cd5);
+  height: 100%;
+  background-image: url("images/IMG_7775.JPG");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-filter: brightness(30%);
+          filter: brightness(30%);
 }
 
 .hero {
@@ -158,7 +162,7 @@ header {
   left: 0;
   -webkit-transform: translateX(50%);
           transform: translateX(50%);
-  background-image: url("images/h210i-01.png");
+  background-image: url("images/mybuild.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position-y: center;
@@ -849,12 +853,8 @@ section.total-cost h2.cost-left {
   background-image: url("images/evga-supernova.png");
 }
 
-#psu {
-  background-image: url("images/evga-supernova.png");
-}
-
 #gpu {
-  background-image: url("images/rtx3070.jpg");
+  background-image: url("images/rogstrix-2080ti.png");
 }
 
 #nzxtusbhub {
