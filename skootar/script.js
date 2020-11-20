@@ -32,7 +32,6 @@ const anim001 = new ScrollMagic.Scene({
     triggerHook: .5
 })
 .setTween(tl001)
-.addIndicators()
 .addTo(controller)
 
 //service anim
