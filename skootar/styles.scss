@@ -4,7 +4,7 @@
   --primary-color: #535bfe;
   --text-color: #6c757d;
   --bg-color: #f8f9fa;
-  --bg-alt-color: #DEE2E6;
+  --bg-alt-color: #dee2e6;
   --white: #fff;
   --header-color: #2d3142;
   --accent-shadow: #535bfe;
@@ -21,6 +21,15 @@ $fourk: 2000px;
   padding: 0;
   box-sizing: border-box;
   list-style-type: none;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 html,
@@ -158,16 +167,16 @@ section.service {
 }
 
 section.store {
-    background-color: var(--primary-color);
-    .image-container {
-        width: 80%;
-        margin: 0 auto;
-        justify-content: space-around;
-    }
-    img {
-        width: 30vw;
-        padding-bottom: 2em;
-    }
+  background-color: var(--primary-color);
+  .image-container {
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-around;
+  }
+  img {
+    width: 8em;
+    padding-bottom: 2em;
+  }
 }
 
 section.errand {
@@ -201,16 +210,16 @@ section.order {
     opacity: 0.5;
   }
   video {
-    height: 80vh;
+    height: 70vh;
   }
 }
 
 section.download {
-    #img004 {
-        margin-top: 2em;
-        height: 55vh;
-        img {
-            height: 50vh;
-        }
+  #img004 {
+    margin-top: 2em;
+    height: 55vh;
+    img {
+      height: 50vh;
     }
+  }
 }
