@@ -185,11 +185,11 @@ section.store .image-container {
   margin: 0 auto;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  padding-bottom: 2em;
 }
 
 section.store img {
   width: 30vw;
+  padding-bottom: 2em;
 }
 
 section.errand {
