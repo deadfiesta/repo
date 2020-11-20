@@ -1,5 +1,13 @@
 'use strict'
 
+// const laptop = "1024";
+
+// $(window).resize(() => {
+//     if ($(window).width() >= laptop) {
+//         $('p').toggleClass('whitespace')
+//     };
+// })
+
 const controller = new ScrollMagic.Controller();
 const title = document.querySelector('.title');
 
@@ -61,7 +69,7 @@ $('.small-icon').each(function(i) {
     new ScrollMagic.Scene({
         triggerElement: this,
         duration: 0,
-        triggerHook: .8
+        triggerHook: .75
     })
     .setTween(action)
     .addTo(controller)
