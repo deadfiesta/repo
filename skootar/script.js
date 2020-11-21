@@ -129,12 +129,12 @@ $('.i004').each(function(i) {
     let image = $(this);
 
     var action = gsap.timeline()
-    .from(image, {duration: 1, y:-20, opacity:0, ease: "power2.out"})
+    .from(image, {duration: 4, y:-40, repeat: -1, yoyo: true, ease: "power2.inOut"})
 
     new ScrollMagic.Scene({
         triggerElement: this,
         duration: 0,
-        triggerHook: .8
+        triggerHook: 1,
     })
     .setTween(action)
     .addTo(controller)

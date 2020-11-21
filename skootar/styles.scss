@@ -47,11 +47,17 @@ body {
 
 svg {
   fill: none;
-  stroke: var(--header-color);
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 2px;
   stroke-dasharray: 80;
+}
+.dark-icon {
+  stroke: var(--header-color);
+}
+
+.white-icon {
+  stroke: #fff !important;
 }
 
 h1 {
@@ -114,7 +120,7 @@ header {
     font-size: 2.4em;
   }
   @include laptop {
-    font-size: .6em;
+    font-size: 0.6em;
   }
 }
 
@@ -165,7 +171,7 @@ section.hero {
     }
     p {
       max-width: $mobile;
-      font-size: .75em;
+      font-size: 0.75em;
       margin-bottom: 9em;
       grid-row: 2 / 4;
       grid-column: 1 / 4;
@@ -257,7 +263,7 @@ section.service {
     p {
       padding: 0 !important;
       @include laptop {
-        font-size: .65em;
+        font-size: 0.65em;
       }
     }
   }
@@ -288,7 +294,7 @@ section.errand {
   @include laptop {
     p {
       max-width: $tablet;
-      font-size: .75em;
+      font-size: 0.75em;
       margin: 2em auto;
     }
     #img002 {
@@ -306,20 +312,19 @@ section.track {
     height: 40vh;
     img {
       height: 60vh;
-      filter: drop-shadow(.25em .35em .25em rgba(#222, .35));
+      filter: drop-shadow(0.25em 0.35em 0.25em rgba(#222, 0.35));
     }
   }
   @include laptop {
     p {
       max-width: $tablet;
-      font-size: .75em;
+      font-size: 0.75em;
       margin: 2em auto;
     }
     #img003 {
       transform: translateY(-5%);
       height: 100vh;
       img {
-        
         height: 100vh;
       }
     }
@@ -358,5 +363,226 @@ section.download {
         height: 100vh;
       }
     }
+  }
+}
+
+header.sh001 {
+  font-size: 0.75em;
+  h1 {
+    margin-top: 1em;
+  }
+  .download {
+    transform: translateY(-20%);
+    box-shadow: 0 .5em 1em rgba($color: #222, $alpha: .15);
+    cursor: pointer;
+    width: fit-content;
+    display: inline-block;
+    border-radius: .5em;
+    background-color: var(--primary-color);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    transition: all .1s ease;
+    @include laptop {
+      height: 3em;
+      margin: 0;
+    }
+    &:hover {
+      transform: translateY(-18%) scale(1.05);
+      transition: all .1s ease;
+    }
+    h3 {
+      padding: .75em 1em;
+      color: var(--bg-color);
+      @include laptop {
+        font-size: 0.75em;
+        padding: 0.5em;
+      }
+    }
+    .icon-container {
+      border-radius: .75em 0 0 .75em;
+      padding: .75em 1em;
+      backdrop-filter: brightness(85%);
+      height: 100%;
+      @include laptop {
+        padding: 0.5em;
+      }
+      .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include laptop {
+          transform: scale(.75) translateY(-5%);
+        }
+      }
+    }
+  }
+  #img005 {
+    z-index: 2;
+    position: relative;
+    margin: 3.5em 0;
+    height: 50vh;
+    &:before {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      width: 35vh;
+      height: 35vh;
+      left: 50%;
+      top: 50%;
+      border-radius: 50%;
+      background-color: var(--primary-color);
+      transform: translateX(-50%) translateY(-50%);
+    }
+    img {
+      height: 50vh;
+    }
+  }
+  @include laptop {
+    .container {
+      display: grid;
+      grid-template: repeat(6, 1fr) / repeat(5, 1fr);
+    }
+    #img005 {
+      transform: translateY(-10%);
+      grid-row: 1 / 7;
+      grid-column: 4 / 6;
+      height: 60vh;
+      &:before {
+        width: 50vh;
+        height: 50vh;
+      }
+      img {
+        height: 70vh;
+      }
+    }
+    h1 {
+      grid-row: 2 / 4;
+      align-self: flex-start;
+    }
+    h2 {
+      font-size: 1.1em;
+      align-self: center;
+      grid-row: 3 / 4;
+    }
+    h3 {
+      grid-row: 4 / 5;
+    }
+    .download {
+      align-self: center;
+      grid-row: 5 / 7;
+    }
+    .download,
+    h1,
+    h2,
+    h3,
+    p {
+      text-align: left !important;
+      grid-column: 1 / 4;
+    }
+    p {
+      padding: 5em 5em 0 0;
+      align-self: center;
+      grid-row: 3 / 6;
+    }
+  }
+}
+section.screens {
+  background-color: var(--bg-alt-color);
+  ul {
+    width: fit-content;
+    margin: 2em auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    li {
+      flex: 0 0 100%;
+      margin: 2.5% 0;
+      @include laptop {
+        flex: 0 0 32%;
+        &:nth-child(3n-1) {
+          margin-left: 2%;
+          margin-right: 2%;
+        }
+      }
+    }
+  }
+  .screen-container {
+    cursor: pointer;
+    position: relative;
+    .hint.reveal {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+      transition: all 0.2s ease;
+    }
+    .hint {
+      visibility: hidden;
+      opacity: 0;
+      font-size: 0.5em;
+      z-index: 3;
+      position: absolute;
+      padding: 1em;
+      width: 80%;
+      bottom: 2em;
+      left: 50%;
+      transform: translateX(-50%) scale(1.1);
+      backdrop-filter: blur(5px);
+      transition: all 0.3s ease;
+      @include laptop {
+        visibility: visible;
+      }
+      &:before {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0.5em;
+        background-color: var(--header-color);
+        opacity: 0.65;
+      }
+      h3 {
+        display: inline-block;
+        padding: 0.5em;
+        margin-bottom: 1em;
+        border-radius: 0.25em;
+        background-color: var(--primary-color);
+        color: var(--bg-color);
+      }
+      span {
+        display: block;
+        font-weight: 600;
+        font-size: 0.9em;
+        color: var(--bg-color);
+      }
+    }
+    img {
+      height: 60vh;
+      box-shadow: 0 0.25em 0.5em rgba($color: #222, $alpha: 0.25);
+      transition: all 0.3s ease;
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 1.5em 1.5em rgba($color: #222222, $alpha: 0.5);
+      }
+      &:hover ~ .hint {
+        opacity: 1;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}
+section.credits {
+  background-color: var(--header-color);
+  h2 {
+    font-weight: 700;
+    color: var(--bg-color);
+    @include laptop {
+      margin-bottom: 1.25em;
+    }
+  }
+  p {
+    color: var(--bg-alt-color);
   }
 }
