@@ -24,7 +24,7 @@ body {
   font-family: "Nunito", sans-serif;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
   html,
   body {
     font-size: 30px;
@@ -88,7 +88,7 @@ p {
   height: 2.25em;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
   .small-icon {
     width: 1.75em;
   }
@@ -99,7 +99,7 @@ p {
   margin: 2em auto;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
   .whitespace {
     max-width: initial;
     margin: 0;
@@ -115,7 +115,7 @@ header h1 {
   font-size: 2.4em;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
   header {
     font-size: .6em;
   }
@@ -141,7 +141,18 @@ section.hero #img001 img {
   height: 60vh;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
+  section.hero #img001 {
+    -webkit-transform: translateX(10%);
+            transform: translateX(10%);
+    height: 75vh;
+  }
+  section.hero #img001 img {
+    height: 80vh;
+  }
+}
+
+@media (min-width: 1100px) {
   section.hero .s001 {
     display: -ms-grid;
     display: grid;
@@ -173,17 +184,19 @@ section.hero #img001 img {
     -ms-grid-row-span: 2;
     grid-row: 1 / 3;
     -ms-grid-column: 1;
-    -ms-grid-column-span: 2;
-    grid-column: 1 / 3;
+    -ms-grid-column-span: 3;
+    grid-column: 1 / 4;
   }
   section.hero p {
-    margin-bottom: 7em;
+    max-width: 414px;
+    font-size: .75em;
+    margin-bottom: 9em;
     -ms-grid-row: 2;
     -ms-grid-row-span: 2;
     grid-row: 2 / 4;
     -ms-grid-column: 1;
-    -ms-grid-column-span: 2;
-    grid-column: 1 / 3;
+    -ms-grid-column-span: 3;
+    grid-column: 1 / 4;
   }
   section.hero .image-container {
     -ms-grid-column: 3;
@@ -193,9 +206,6 @@ section.hero #img001 img {
     -ms-grid-row-span: 3;
     grid-row: 1 / 4;
   }
-  section.hero .image-container img {
-    height: 80vh;
-  }
 }
 
 section.service ul {
@@ -203,10 +213,10 @@ section.service ul {
   max-width: 414px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
   section.service ul {
     margin: 0;
-    max-width: 1200px;
+    max-width: 1100px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -222,7 +232,7 @@ section.service li {
   margin: 2.5em 0;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
   section.service li {
     margin: 3em 1em;
     -webkit-box-orient: vertical;
@@ -255,7 +265,7 @@ section.service .icon-container {
           box-shadow: 0 0.25em 0.75em rgba(0, 0, 0, 0.075);
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
   section.service .icon-container {
     max-width: 6em;
   }
@@ -313,7 +323,7 @@ section.service .text-container {
   text-align: left !important;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
   section.service .text-container {
     margin: 1.5em 0;
     text-align: center !important;
@@ -330,13 +340,14 @@ section.service .text-container p {
   padding: 0 !important;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
   section.service .text-container p {
     font-size: .65em;
   }
 }
 
 section.store {
+  display: none;
   background-color: var(--primary-color);
 }
 
@@ -365,6 +376,20 @@ section.errand #img002 img {
   height: 80vh;
 }
 
+@media (min-width: 1100px) {
+  section.errand p {
+    max-width: 768px;
+    font-size: .75em;
+    margin: 2em auto;
+  }
+  section.errand #img002 {
+    height: 50vh;
+  }
+  section.errand #img002 img {
+    height: 120vh;
+  }
+}
+
 section.track #img003 {
   -webkit-transform: translateY(-15%);
           transform: translateY(-15%);
@@ -373,6 +398,24 @@ section.track #img003 {
 
 section.track #img003 img {
   height: 60vh;
+  -webkit-filter: drop-shadow(0.25em 0.35em 0.25em rgba(34, 34, 34, 0.35));
+          filter: drop-shadow(0.25em 0.35em 0.25em rgba(34, 34, 34, 0.35));
+}
+
+@media (min-width: 1100px) {
+  section.track p {
+    max-width: 768px;
+    font-size: .75em;
+    margin: 2em auto;
+  }
+  section.track #img003 {
+    -webkit-transform: translateY(-5%);
+            transform: translateY(-5%);
+    height: 100vh;
+  }
+  section.track #img003 img {
+    height: 100vh;
+  }
 }
 
 section.order {
@@ -393,6 +436,12 @@ section.order video {
   height: 80vh;
 }
 
+@media (min-width: 1100px) {
+  section.order video {
+    height: 100vh;
+  }
+}
+
 section.download #img004 {
   margin-top: 2em;
   height: 55vh;
@@ -400,5 +449,15 @@ section.download #img004 {
 
 section.download #img004 img {
   height: 50vh;
+}
+
+@media (min-width: 1100px) {
+  section.download #img004 {
+    margin: 2.5em 0;
+    height: 100vh;
+  }
+  section.download #img004 img {
+    height: 100vh;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
