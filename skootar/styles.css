@@ -152,11 +152,9 @@ section.hero #img001 img {
   section.hero #img001 {
     -webkit-transform: translateX(10%);
             transform: translateX(10%);
-    max-height: 700px;
     height: 75vh;
   }
   section.hero #img001 img {
-    max-height: 700px;
     height: 80vh;
   }
 }
@@ -767,7 +765,6 @@ section.screens .screen-container .hint span {
 
 section.screens .screen-container img {
   height: 60vh;
-  max-height: 525px;
   -webkit-box-shadow: 0 0.25em 0.5em rgba(34, 34, 34, 0.25);
           box-shadow: 0 0.25em 0.5em rgba(34, 34, 34, 0.25);
   -webkit-transition: all 0.3s ease;
