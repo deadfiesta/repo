@@ -9,6 +9,10 @@ $(document).ready(function () {
         window.open(url, "_blank");
     })
     $('.download').click(() => {
+<<<<<<< HEAD
         window.open('/skootar-ui.zip')
+=======
+        window.open('./skootar-ui.zip')
+>>>>>>> parent of ec6a295... 2 Dots
     });
 })
