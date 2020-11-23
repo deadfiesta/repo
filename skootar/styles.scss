@@ -141,10 +141,10 @@ section.hero {
     }
     @include laptop {
       transform: translateX(10%);
-      max-height: 600px;
+      max-height: 650px;
       height: 75vh;
       img {
-        max-height: 700px;
+        max-height: 750px;
         height: 80vh;
       }
     }

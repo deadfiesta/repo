@@ -152,11 +152,11 @@ section.hero #img001 img {
   section.hero #img001 {
     -webkit-transform: translateX(10%);
             transform: translateX(10%);
-    max-height: 600px;
+    max-height: 650px;
     height: 75vh;
   }
   section.hero #img001 img {
-    max-height: 700px;
+    max-height: 750px;
     height: 80vh;
   }
 }
