@@ -9,6 +9,6 @@ $(document).ready(function () {
         window.open(url, "_blank");
     })
     $('.download').click(() => {
-        window.open('./skootar-ui.zip')
+        window.open('../skootar-ui.zip')
     });
 })
