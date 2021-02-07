@@ -19,6 +19,7 @@ $(function () {
       }, 200);
     },
   });
+  appendContent('home');
 });
 
 function appendContent(html) {
