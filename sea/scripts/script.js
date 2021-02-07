@@ -20,6 +20,7 @@ $(function () {
     },
   });
   appendContent('home');
+  $("#glassmorphism").addClass('home');
 });
 
 function appendContent(html) {
