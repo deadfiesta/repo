@@ -75,7 +75,7 @@ function appendContent(html) {
         poster="./images/logo-python.png" src="./videos/python-anim.webm"\
         type="video/ogg"></video></div></li>\
         <li><div class="animated-logo-container"><video playsinline autoplay muted loop data-keepplaying\
-        src="./videos/ascended-logo.webm" type="video/ogg"></video></div></li>\
+        poster="./images/logo-ascended.png" src="./videos/ascended-logo.webm" type="video/ogg"></video></div></li>\
         </ul>\
         <div class="view-more" onclick="openLinks('youtube', '/channel/UCzFVQCspETObQPbCkpYsxHw')">\
         <div class="yt-container"><i class="fab fa-youtube"></i></div>\
