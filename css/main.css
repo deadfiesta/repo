@@ -320,10 +320,6 @@ a {
   }
 }
 
-.glass-container #glassmorphism.home {
-  height: 60%;
-}
-
 .glass-container.hide #glassmorphism {
   -webkit-transform-origin: top;
           transform-origin: top;
