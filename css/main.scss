@@ -278,12 +278,6 @@ a {
   }
   #glassmorphism.home {
     height: 60%;
-    @include tablet {
-      height: 50%;
-    }
-    @include laptop {
-      height: 60%;
-    }
   }
 }
 .glass-container.hide {

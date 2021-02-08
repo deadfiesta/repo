@@ -324,18 +324,6 @@ a {
   height: 60%;
 }
 
-@media (min-width: 768px) {
-  .glass-container #glassmorphism.home {
-    height: 50%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .glass-container #glassmorphism.home {
-    height: 60%;
-  }
-}
-
 .glass-container.hide #glassmorphism {
   -webkit-transform-origin: top;
           transform-origin: top;
