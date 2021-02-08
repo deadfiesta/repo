@@ -326,13 +326,13 @@ a {
 
 @media (min-width: 768px) {
   .glass-container #glassmorphism.home {
-    height: 40%;
+    height: 50%;
   }
 }
 
 @media (min-width: 1024px) {
   .glass-container #glassmorphism.home {
-    height: 50%;
+    height: 60%;
   }
 }
 
@@ -452,17 +452,6 @@ a {
   transition: all 0.3s ease;
 }
 
-.home #content {
-  padding: 15% 0%;
-  height: 80%;
-}
-
-@media (min-width: 1024px) {
-  .home #content {
-    padding: 0;
-  }
-}
-
 .home #content .avatar-container {
   display: none;
   position: relative;
@@ -475,6 +464,13 @@ a {
   .home #content .avatar-container {
     height: 10em;
     width: 10em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home #content .avatar-container {
+    display: -ms-grid;
+    display: grid;
   }
 }
 

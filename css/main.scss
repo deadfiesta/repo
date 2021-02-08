@@ -279,10 +279,10 @@ a {
   #glassmorphism.home {
     height: 60%;
     @include tablet {
-      height: 40%;
+      height: 50%;
     }
     @include laptop {
-      height: 50%;
+      height: 60%;
     }
   }
 }
@@ -364,11 +364,6 @@ a {
 
 //home
 .home #content {
-  padding: 15% 0%;
-  height: 80%;
-  @include laptop {
-    padding: 0;
-  }
   .avatar-container {
     display: none;
     position: relative;
@@ -378,6 +373,9 @@ a {
     @include tablet {
       height: 10em;
       width: 10em;
+    }
+    @include laptop {
+      display: grid;
     }
     &:after {
       position: absolute;
