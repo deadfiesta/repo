@@ -179,8 +179,8 @@ a {
   #glassmorphism {
     // pointer-events: all;
     @extend %centerstuff;
-    width: 85%;
-    height: 85%;
+    width: 90%;
+    height: 95%;
     @include tablet {
       height: 65%;
       max-width: $laptop;

@@ -163,8 +163,8 @@ a {
 }
 
 .glass-container #glassmorphism {
-  width: 85%;
-  height: 85%;
+  width: 90%;
+  height: 95%;
   stroke: 2px;
   background-image: radial-gradient(circle at top left, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.025));
   border-radius: 1em;
