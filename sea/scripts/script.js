@@ -43,8 +43,7 @@ function appendContent(html) {
       break;
     case "work":
       append = `<h4>Previous Work</h4>\
-        <p>Our team research works are focused on industrial analytics and education tools leveraging on the\
-        technology of A.I. My design scope mainly involved designing marketing and publicity material\
+        <p>My design scope mainly involved designing marketing and publicity material\
         such as web, mobile/desktop app, pitch deck and video productions. Apart from internal\
         collaborations with faculties within the university, we also work with commercial businesses to\
         improve their business operations.</p>\

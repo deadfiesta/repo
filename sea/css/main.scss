@@ -348,10 +348,16 @@ a {
 .home #content {
   height: 80%;
   .avatar-container {
+    display: none;
     position: relative;
-    height: 10em;
-    width: 10em;
+    height: 7.5em;
+    width: 7.5em;
     margin: 2em 0;
+    @include tablet {
+      display: grid;
+      height: 10em;
+      width: 10em;
+    }
     &:after {
       position: absolute;
       content: "";
@@ -407,11 +413,11 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 60%;
+    width: 80%;
     margin-top: 1em;
     li {
       object {
-        height: 2.5em;
+        height: 2.25em;
         padding: 0.25em;
         opacity: 0.55;
         transition: all 0.3s ease;
@@ -438,7 +444,7 @@ a {
     align-items: center;
     width: 90%;
     li {
-      width: 44%;
+      width: 40%;
       margin: 0.5em 1%;
       @include tablet {
         width: 22.5%;
@@ -523,17 +529,21 @@ a {
     @extend %centerstuff;
     width: 100%;
     li {
-      margin: 0em 1em;
-      transition: all .3s ease;
+      margin: 1em;
+      transition: all 0.3s ease;
       &:hover {
         transform: scale(1.2);
-        transition: all .3s ease;
+        transition: all 0.3s ease;
       }
       .animated-logo-container {
         border-radius: $border-radius;
         overflow: hidden;
-        width: 14em;
-        height: 9em;
+        width: 7em;
+        height: 5em;
+        @include tablet {
+          width: 14em;
+          height: 9em;
+        }
         video {
           @extend %bgcover;
           object-fit: cover;

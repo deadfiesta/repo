@@ -425,10 +425,20 @@ a {
 }
 
 .home #content .avatar-container {
+  display: none;
   position: relative;
-  height: 10em;
-  width: 10em;
+  height: 7.5em;
+  width: 7.5em;
   margin: 2em 0;
+}
+
+@media (min-width: 768px) {
+  .home #content .avatar-container {
+    display: -ms-grid;
+    display: grid;
+    height: 10em;
+    width: 10em;
+  }
 }
 
 .home #content .avatar-container:after {
@@ -505,12 +515,12 @@ a {
       flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  width: 60%;
+  width: 80%;
   margin-top: 1em;
 }
 
 .home #content ul.companies li object {
-  height: 2.5em;
+  height: 2.25em;
   padding: 0.25em;
   opacity: 0.55;
   -webkit-transition: all 0.3s ease;
@@ -547,7 +557,7 @@ a {
 }
 
 .work #content ul.projects li {
-  width: 44%;
+  width: 40%;
   margin: 0.5em 1%;
 }
 
@@ -662,23 +672,30 @@ a {
 }
 
 .animated #content ul.animated li {
-  margin: 0em 1em;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+  margin: 1em;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .animated #content ul.animated li:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .animated #content ul.animated li .animated-logo-container {
   border-radius: 0.25em;
   overflow: hidden;
-  width: 14em;
-  height: 9em;
+  width: 7em;
+  height: 5em;
+}
+
+@media (min-width: 768px) {
+  .animated #content ul.animated li .animated-logo-container {
+    width: 14em;
+    height: 9em;
+  }
 }
 
 .animated #content ul.animated li .animated-logo-container video {
