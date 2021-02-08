@@ -222,9 +222,8 @@ a {
       background-size: cover;
     }
     #content {
-      height: 90%;
       max-height: 700px;
-      padding: 5% 0;
+      padding: 1.5% 0;
       @include tablet {
         height: 80%;
       }
@@ -362,10 +361,6 @@ a {
     height: 7.5em;
     width: 7.5em;
     margin: 2em 0;
-    @include tablet {
-      height: 10em;
-      width: 10em;
-    }
     @include laptop {
       display: grid;
     }
