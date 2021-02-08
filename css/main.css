@@ -233,8 +233,8 @@ a {
 }
 
 .glass-container #glassmorphism #content {
+  height: 90%;
   max-height: 700px;
-  padding: 1.5% 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -434,6 +434,10 @@ a {
           transform: translateX(-0.55em) rotate(-45deg);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+.home #content {
+  height: 50%;
 }
 
 .home #content .avatar-container {
