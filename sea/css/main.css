@@ -329,9 +329,16 @@ a {
   pointer-events: all;
   position: absolute;
   z-index: 50;
-  top: 0;
-  right: 0;
+  top: 1em;
+  right: 1em;
   padding: 1.25em;
+}
+
+@media (min-width: 768px) {
+  .minifier-container {
+    top: 1em;
+    right: 1em;
+  }
 }
 
 .minifier-container .minify-icon-container {
@@ -425,7 +432,6 @@ a {
 }
 
 .home #content .avatar-container {
-  display: none;
   position: relative;
   height: 7.5em;
   width: 7.5em;
@@ -434,8 +440,6 @@ a {
 
 @media (min-width: 768px) {
   .home #content .avatar-container {
-    display: -ms-grid;
-    display: grid;
     height: 10em;
     width: 10em;
   }
@@ -548,8 +552,9 @@ a {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
