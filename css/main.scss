@@ -224,6 +224,7 @@ a {
     #content {
       height: 90%;
       max-height: 700px;
+      padding: 5% 0;
       @include tablet {
         height: 80%;
       }
@@ -393,6 +394,7 @@ a {
   ul.fields {
     display: flex;
     flex-direction: row;
+    margin: 1.25% 0;
     @include tablet {
       align-items: center;
     }
@@ -421,7 +423,6 @@ a {
     flex-wrap: wrap;
     justify-content: space-around;
     width: 80%;
-    margin-top: 1em;
     li {
       object {
         height: 2em;

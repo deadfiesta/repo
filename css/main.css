@@ -235,6 +235,7 @@ a {
 .glass-container #glassmorphism #content {
   height: 90%;
   max-height: 700px;
+  padding: 5% 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -490,6 +491,7 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  margin: 1.25% 0;
 }
 
 @media (min-width: 768px) {
@@ -533,7 +535,6 @@ a {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   width: 80%;
-  margin-top: 1em;
 }
 
 .home #content ul.companies li object {
