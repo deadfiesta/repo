@@ -12,7 +12,7 @@
 <body>
     <div class="init-container abs passthrough"></div>
     <div class="glass-container abs passthrough">
-        <div id="glassmorphism" data-hidden="false" class="work">
+        <div id="glassmorphism" data-hidden="false" class="home">
             <div class="content-container">
                 <div class="minifier-container">
                     <div class="minify-icon-container" onclick="toggleGlass(event)">
@@ -23,15 +23,13 @@
                     </div>
                 </div>
                 <div id="content">
-                    <!--append starts here-->
-                    <!--append ends here-->
                 </div>
             </div>
             <div class="texture abs"></div>
         </div>
     </div>
-    <div class="misc-container abs"></div>
-    <div class="multiply-container abs"></div>
+    <div class="misc-container abs passthrough"></div>
+    <div class="multiply-container abs passthrough"></div>
     <div id="fullpage">
         <div class="section" data-section="home">
             <div class="fade-container abs passthrough">
@@ -50,28 +48,21 @@
             </div>
             <div class="bg-container abs">
                 <div class="video-container">
-                    <video class="v001" src="https://alim.algorithmexchange.com/redjasper/video/Red%20Jasper.mp4" type="video/mp4" playsinline
-                        controls></video>
+                    <video class="v002" poster="./images/01.jpg"
+                        src="https://alim.algorithmexchange.com/redjasper/video/Red%20Jasper.mp4" type="video/mp4"
+                        playsinline controls></video>
                 </div>
             </div>
         </div>
-        <div class="section" data-section="something">
-            <div class="slide">
-                <div class="fade-container abs passthrough">
-                    <div class="black"></div>
-                </div>
-                <div class="bg-container abs">
-                    <div class="video-container">
-                        <video class="v001" data-keepplaying src="./videos/proj-looper.webm" type="video/webm" playsinline
-                            autoplay muted loop></video>
-                    </div>
-                </div>
+        <div class="section active" data-section="about">
+            <div class="fade-container abs passthrough">
+                <div class="black"></div>
             </div>
-            <div class="slide">
-                <button>tee</button>
-            </div>
-            <div class="slide">
-                <button>hello</button>
+            <div class="bg-container abs">
+                <div class="video-container">
+                    <video class="v002" data-keepplaying src="./videos/ball-render.webm" type="video/webm" playsinline
+                        autoplay muted loop></video>
+                </div>
             </div>
         </div>
     </div>

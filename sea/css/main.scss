@@ -114,6 +114,7 @@ a {
   pointer-events: none;
 }
 .multiply-container {
+  pointer-events: none;
   z-index: 20;
   background-color: $dark-color;
   opacity: 0.65;
@@ -160,10 +161,13 @@ a {
     min-width: 100vw;
     min-height: 100vh;
   }
+  .v002 {
+    pointer-events: all;
+  }
   .bg01 {
     @extend %bgfullpage;
     @extend %bgcover;
-    background-image: url("../images/01.jpg");
+    background-image: url("../images/aboutbg.jpg");
   }
 }
 .glass-container {
@@ -173,7 +177,7 @@ a {
   height: 100%;
   z-index: 40;
   #glassmorphism {
-    pointer-events: all;
+    // pointer-events: all;
     @extend %centerstuff;
     width: 85%;
     height: 85%;
@@ -182,11 +186,7 @@ a {
       max-width: $laptop;
     }
     stroke: 2px;
-    background-image: radial-gradient(
-      circle at top left,
-      rgba(255, 255, 255, 0.15),
-      rgba(255, 255, 255, 0.025)
-    );
+    background-image: radial-gradient(circle at top left, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.025));
     border-radius: 1em;
     backdrop-filter: blur(15px);
     border: 2px ridge rgba($light-bg, $alpha: 0.25);
@@ -231,6 +231,9 @@ a {
       justify-content: space-around;
       color: white;
       z-index: 20;
+      ul {
+        pointer-events: all;
+      }
       h4 {
         font-weight: $semibold;
         text-transform: uppercase;
@@ -279,6 +282,7 @@ a {
   }
 }
 .minifier-container {
+  pointer-events: all;
   position: absolute;
   z-index: 50;
   top: 0;
@@ -342,6 +346,7 @@ a {
 
 //home
 .home #content {
+  height: 80%;
   .avatar-container {
     position: relative;
     height: 10em;
@@ -369,25 +374,29 @@ a {
   p {
     margin: 1em 0;
   }
-  ul {
-    margin: 1em 0;
-  }
+  // ul {
+  //   margin: 1em 0;
+  // }
   ul.fields {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     @include tablet {
-      flex-direction: row;
       align-items: center;
     }
     li {
       cursor: default;
       font-size: 1em;
       background-color: rgba($dark-color, $alpha: 0.35);
+      font-size: 0.75em;
+      height: 2.5em;
+      margin: 0 0.25em;
       padding: 0 1em;
       height: 2.2em;
       border-radius: 1.1em;
-      margin: 0 0.65em;
       @extend %centerstuff;
+      @include tablet {
+        font-size: 0.9em;
+      }
       transition: all 0.3s ease;
       &:hover {
         background-color: rgba($primary-color, $alpha: 1);
@@ -396,15 +405,21 @@ a {
   }
   ul.companies {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     width: 60%;
+    margin-top: 1em;
     li {
       object {
+        height: 2.5em;
+        padding: 0.25em;
         opacity: 0.55;
-        height: 5em;
-        padding: 1em;
         transition: all 0.3s ease;
         border-radius: $border-radius;
+        @include tablet {
+          height: 5em;
+          padding: 1em;
+        }
         &:hover {
           opacity: 1;
           background-color: rgba($dark-color, $alpha: 0.5);
@@ -460,12 +475,17 @@ a {
   }
   .view-more {
     cursor: pointer;
+    pointer-events: all;
     background-color: rgba($light-bg, $alpha: 0.15);
     border-radius: $border-radius;
     display: flex;
     align-items: center;
     padding: 1em;
     transition: all 0.3s ease;
+    font-size: 0.8em;
+    @include tablet {
+      font-size: 1em;
+    }
     &:hover {
       background-color: rgba($light-bg, $alpha: 0.25);
       transition: all 0.3s ease;
@@ -479,6 +499,76 @@ a {
       border-radius: $border-radius;
       padding: 0.5em;
       background-color: $behance;
+    }
+    h3 {
+      margin: 0 1em;
+      font-size: 1em;
+      font-weight: $medium;
+    }
+    .fab {
+      font-size: 1.15em;
+    }
+    .fas {
+      transform: translateX(-0.35em);
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+//animated
+.animated #content {
+  ul.animated {
+    display: flex;
+    flex-wrap: wrap;
+    @extend %centerstuff;
+    width: 100%;
+    li {
+      margin: 0em 1em;
+      transition: all .3s ease;
+      &:hover {
+        transform: scale(1.2);
+        transition: all .3s ease;
+      }
+      .animated-logo-container {
+        border-radius: $border-radius;
+        overflow: hidden;
+        width: 14em;
+        height: 9em;
+        video {
+          @extend %bgcover;
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+  .view-more {
+    cursor: pointer;
+    pointer-events: all;
+    background-color: rgba($light-bg, $alpha: 0.15);
+    border-radius: $border-radius;
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    transition: all 0.3s ease;
+    font-size: 0.8em;
+    @include tablet {
+      font-size: 1em;
+    }
+    &:hover {
+      background-color: rgba($light-bg, $alpha: 0.25);
+      transition: all 0.3s ease;
+    }
+    &:hover .fas {
+      transform: translateX(0);
+      transition: all 0.3s ease;
+    }
+    .yt-container {
+      @extend %centerstuff;
+      border-radius: $border-radius;
+      padding: 0.5em;
+      background-color: $red;
     }
     h3 {
       margin: 0 1em;
