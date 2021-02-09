@@ -63,18 +63,18 @@ function appendContent(html) {
         recognizable to potential investors/customers in the near future. I also create short animated\
         films for education.</p>\
         <ul class="animated">\
-        <li><div class="animated-logo-container">\
+        <li><div onclick="openLinks('alim', '/aarc')" class="animated-logo-container">\
         <video playsinline autoplay muted loop data-keepplaying poster="./images/logo-aarc.png"\
         src="./videos/aarc-anim.webm" type="video/ogg"></video>\
         </div></li>\
-        <li><div class="animated-logo-container">\
+        <li><div onclick="openLinks('alim','/bloundhound/logo')" class="animated-logo-container">\
         <video playsinline autoplay muted loop data-keepplaying\
         poster="./images/logo-bloundhound.png" src="./videos/bloundhound-anim.webm"\
         type="video/ogg"></video></div></li>\
-        <li><div class="animated-logo-container"><video playsinline autoplay muted loop data-keepplaying\
+        <li><div onclick="openLinks('youtube','/watch?v=b5mnz5T1e58&')" class="animated-logo-container"><video playsinline autoplay muted loop data-keepplaying\
         poster="./images/logo-python.png" src="./videos/python-anim.webm"\
         type="video/ogg"></video></div></li>\
-        <li><div class="animated-logo-container"><video playsinline autoplay muted loop data-keepplaying\
+        <li><div onclick="openLinks('youtube','/watch?v=ZLbDM0nE3eY&')" class="animated-logo-container"><video playsinline autoplay muted loop data-keepplaying\
         poster="./images/logo-ascended.png" src="./videos/ascended-logo.webm" type="video/ogg"></video></div></li>\
         </ul>\
         <div class="view-more" onclick="openLinks('youtube', '/channel/UCzFVQCspETObQPbCkpYsxHw')">\

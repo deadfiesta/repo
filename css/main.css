@@ -165,7 +165,8 @@ a {
 .glass-container #glassmorphism {
   width: 90%;
   height: 95%;
-  max-height: 600px;
+  max-height: 550px;
+  max-width: 350px;
   stroke: 2px;
   background-image: radial-gradient(circle at top left, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.025));
   border-radius: 1em;
@@ -234,7 +235,8 @@ a {
 
 .glass-container #glassmorphism #content {
   height: 90%;
-  max-height: 700px;
+  max-width: 360px;
+  max-height: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -254,6 +256,8 @@ a {
 @media (min-width: 768px) {
   .glass-container #glassmorphism #content {
     height: 80%;
+    max-width: none;
+    max-height: none;
   }
 }
 
@@ -316,15 +320,26 @@ a {
 
 @media (min-width: 1024px) {
   .glass-container #glassmorphism #content p {
-    font-size: 1.1em;
+    font-size: 1.2em;
+    line-height: 1.6em;
+  }
+}
+
+.glass-container #glassmorphism.home {
+  height: 75% !important;
+}
+
+@media (min-width: 768px) {
+  .glass-container #glassmorphism.home {
+    height: 55% !important;
   }
 }
 
 .glass-container.hide #glassmorphism {
   -webkit-transform-origin: top;
           transform-origin: top;
-  -webkit-transform: translateY(95%);
-          transform: translateY(95%);
+  -webkit-transform: translateY(85%);
+          transform: translateY(85%);
 }
 
 @media (min-width: 768px) {
@@ -338,8 +353,8 @@ a {
   pointer-events: all;
   position: absolute;
   z-index: 50;
-  top: 1em;
-  right: 1em;
+  top: 2em;
+  right: 2em;
   padding: 1.25em;
 }
 
@@ -437,7 +452,13 @@ a {
 }
 
 .home #content {
-  height: 50%;
+  max-height: 350px !important;
+}
+
+@media (min-width: 768px) {
+  .home #content {
+    max-height: none;
+  }
 }
 
 .home #content .avatar-container {
@@ -682,7 +703,13 @@ a {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  width: 100%;
+  width: 80%;
+}
+
+@media (min-width: 768px) {
+  .animated #content ul.animated {
+    width: 90%;
+  }
 }
 
 .animated #content ul.animated li {
@@ -705,6 +732,7 @@ a {
 }
 
 .animated #content ul.animated li .animated-logo-container {
+  cursor: pointer;
   border-radius: 0.25em;
   overflow: hidden;
   width: 7em;

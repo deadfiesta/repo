@@ -180,7 +180,8 @@ a {
     @extend %centerstuff;
     width: 90%;
     height: 95%;
-    max-height: 600px;
+    max-height: 550px;
+    max-width: 350px;
     stroke: 2px;
     background-image: radial-gradient(circle at top left, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.025));
     border-radius: 1em;
@@ -223,9 +224,12 @@ a {
     }
     #content {
       height: 90%;
-      max-height: 700px;
+      max-width: 360px;
+      max-height: 500px;
       @include tablet {
         height: 80%;
+        max-width: none;
+        max-height: none;
       }
       display: flex;
       flex-direction: column;
@@ -271,16 +275,23 @@ a {
           font-size: 1.25em;
         }
         @include laptop {
-          font-size: 1.1em;
+          font-size: 1.2em;
+          line-height: 1.6em;
         }
       }
+    }
+  }
+  #glassmorphism.home {
+    height: 75% !important;
+    @include tablet {
+      height: 55% !important;
     }
   }
 }
 .glass-container.hide {
   #glassmorphism {
     transform-origin: top;
-    transform: translateY(95%);
+    transform: translateY(85%);
     @include tablet {
       transform: translateY(115%);
     }
@@ -290,8 +301,8 @@ a {
   pointer-events: all;
   position: absolute;
   z-index: 50;
-  top: 1em;
-  right: 1em;
+  top: 2em;
+  right: 2em;
   padding: 1.25em;
   @include tablet {
     top: 1em;
@@ -355,7 +366,10 @@ a {
 
 //home
 .home #content {
-  height: 50%;
+  max-height: 350px !important;
+  @include tablet {
+    max-height: none;
+  }
   .avatar-container {
     display: none;
     position: relative;
@@ -530,7 +544,10 @@ a {
     display: flex;
     flex-wrap: wrap;
     @extend %centerstuff;
-    width: 100%;
+    width: 80%;
+    @include tablet {
+      width: 90%;
+    }
     li {
       margin: .25em;
       transition: all 0.3s ease;
@@ -542,6 +559,7 @@ a {
         transition: all 0.3s ease;
       }
       .animated-logo-container {
+        cursor: pointer;
         border-radius: $border-radius;
         overflow: hidden;
         width: 7em;
