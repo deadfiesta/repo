@@ -10,7 +10,6 @@ $(function () {
     onLeave: function (origin, destination, direction) {
       $class = destination.anchor;
       $content = $("#content");
-
       $content.fadeOut(200, function () {
         appendContent($class);
         setTimeout(function () {
@@ -18,9 +17,9 @@ $(function () {
           entry("enter", direction);
         }, 200);
       });
-      entry('exit', direction)
       setTimeout(function () {
         $("#glassmorphism").removeClass().addClass($class);
+        entry('exit', direction)
       }, 200);
     },
   });
@@ -204,7 +203,8 @@ function entry(going, direction) {
     },
     {
       y: end,
-      duration: .3,
+      duration: .6,
+      ease: "power3.out",
     }
   );
 }
@@ -215,7 +215,7 @@ function glassmorphism(direction) {
   direction == "down" ? (end = "110%") : (end = "0");
   let anim = gsap.to($glassmorphism, {
     y: end,
-    duration: 0.8,
+    duration: 1,
     ease: "elastic.out(.5, .45)",
   });
 }

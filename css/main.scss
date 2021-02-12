@@ -181,6 +181,8 @@ a {
   height: 100%;
   z-index: 40;
   #glassmorphism {
+    overflow: hidden;
+    position: relative;
     @extend %centerstuff;
     width: 90%;
     height: 95%;
@@ -286,7 +288,6 @@ a {
           font-size: 1em;
         }
         @include laptop {
-          font-size: 1.1em;
           line-height: 1.6em;
         }
       }
@@ -413,6 +414,9 @@ a {
   }
   p {
     margin: 1em 0;
+    @include tablet {
+      margin: 2em 0;
+    }
   }
   ul.fields {
     display: flex;
@@ -420,6 +424,7 @@ a {
     margin: 1.25% 0;
     @include tablet {
       align-items: center;
+      margin: 1.5em 0;
     }
     li {
       cursor: default;
