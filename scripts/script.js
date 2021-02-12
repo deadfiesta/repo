@@ -86,10 +86,6 @@ function appendContent(html) {
   $("#content").html(append);
 }
 
-
-
-
-
 function openLinks(server, what) {
   let domain = "";
 
@@ -151,12 +147,15 @@ function toggleGlass(e) {
 
   function toFade(response) {
     $icon = $(".icon");
-    $content = $("#content");
+    $content = $("#content-state");
     $multiply = $(".multiply-container");
+    $glass = $('#glassmorphism')
     if (response == "y") {
-      $content.css("visibility", "hidden");
+      $content.fadeOut();
+      $glass.attr('data-hidden', 'true');
     } else {
-      $content.css("visibility", "visible");
+      $content.fadeIn();
+      $glass.attr('data-hidden', 'false');
     }
     $icon.toggleClass("up");
     $multiply.toggleClass("faded").toggleClass("passthrough");

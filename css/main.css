@@ -32,7 +32,7 @@ body {
   background-size: cover;
 }
 
-.video-container, .glass-container, .glass-container #glassmorphism, .glass-container #glassmorphism .content-container, .home #content ul.fields li, .work #content .view-more .be-container, .animated #content ul.animated, .animated #content .view-more .yt-container {
+.video-container, .glass-container, .glass-container #glassmorphism, .glass-container #glassmorphism .content-container, .glass-container #glassmorphism #content-state, .home #content ul.fields li, .work #content .view-more .be-container, .animated #content ul.animated, .animated #content .view-more .yt-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -104,7 +104,7 @@ a {
 }
 
 .init-container {
-  background-color: #1b1b1e;
+  background-color: black;
   z-index: 50;
 }
 
@@ -119,7 +119,7 @@ a {
 .black {
   width: 100%;
   height: 100%;
-  background-color: #1b1b1e;
+  background-color: black;
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
@@ -140,6 +140,12 @@ a {
 .video-container video {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.video-container video:focus {
+  outline: none;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .video-container #rj {
@@ -175,8 +181,10 @@ a {
   border: 2px ridge rgba(220, 227, 229, 0.25);
   -webkit-box-shadow: 0 0.1em 1em rgba(27, 27, 30, 0.15);
           box-shadow: 0 0.1em 1em rgba(27, 27, 30, 0.15);
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  -webkit-transform-origin: top;
+          transform-origin: top;
   -webkit-animation: enter 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
           animation: enter 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -233,6 +241,10 @@ a {
   background-size: cover;
 }
 
+.glass-container #glassmorphism #content-state {
+  height: 100%;
+}
+
 .glass-container #glassmorphism #content {
   height: 90%;
   max-width: 360px;
@@ -255,7 +267,7 @@ a {
 
 @media (min-width: 768px) {
   .glass-container #glassmorphism #content {
-    height: 80%;
+    height: 85%;
     max-width: none;
     max-height: none;
   }
@@ -314,7 +326,7 @@ a {
 
 @media (min-width: 768px) {
   .glass-container #glassmorphism #content p {
-    font-size: 1.25em;
+    font-size: 1em;
   }
 }
 
@@ -336,8 +348,6 @@ a {
 }
 
 .glass-container.hide #glassmorphism {
-  -webkit-transform-origin: top;
-          transform-origin: top;
   -webkit-transform: translateY(85%);
           transform: translateY(85%);
 }
@@ -353,16 +363,9 @@ a {
   pointer-events: all;
   position: absolute;
   z-index: 50;
-  top: 2em;
-  right: 2em;
-  padding: 1.25em;
-}
-
-@media (min-width: 768px) {
-  .minifier-container {
-    top: 1em;
-    right: 1em;
-  }
+  top: 0;
+  right: 0;
+  padding: 15px;
 }
 
 .minifier-container .minify-icon-container {
