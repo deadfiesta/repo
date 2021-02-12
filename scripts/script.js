@@ -5,23 +5,27 @@ $(function () {
     autoScrolling: true,
     scrollHorizontally: true,
     navigation: true,
-    fixedElements: '.init-container, .glass-container, .misc-container, .multiply-container',
+    fixedElements:
+      ".init-container, .glass-container, .misc-container, .multiply-container",
     onLeave: function (origin, destination, direction) {
       $class = destination.anchor;
       $content = $("#content");
+
       $content.fadeOut(200, function () {
         appendContent($class);
         setTimeout(function () {
           $content.fadeIn(300);
+          entry("enter", direction);
         }, 200);
       });
+      entry('exit', direction)
       setTimeout(function () {
         $("#glassmorphism").removeClass().addClass($class);
       }, 200);
     },
   });
-  appendContent('home');
-  $("#glassmorphism").addClass('home');
+  appendContent("home");
+  $("#glassmorphism").addClass("home");
 });
 
 function appendContent(html) {
@@ -32,9 +36,9 @@ function appendContent(html) {
         <div class="img"></div></div>\
         <h4>Hello There</h4>\
         <div class="title-container"><h2>I'm&nbsp;</h2><h1>Wen Kiong</h1></div>\
+        <ul class="fields"><li>#ui/ux</li><li>#animation</li><li>#frontendweb</li></ul>\
         <p>I have worked at NUS for 4 years as a visual designer. I mainly worked with software engineers to\
         create high fidelity mobile and desktop app mockups for commercial and government entities.</p>\
-        <ul class="fields"><li>#ui/ux</li><li>#animation</li><li>#frontendweb</li></ul>\
         <ul class="companies"><li><object data="./images/logos_nus.svg"></object></li>\
         <li><object data="./images/logos_red-jasper.svg"></object></li>\
         <li><object data="./images/logos_mindef.svg"></object></li>\
@@ -80,7 +84,7 @@ function appendContent(html) {
         <div class="view-more" onclick="openLinks('youtube', '/channel/UCzFVQCspETObQPbCkpYsxHw')">\
         <div class="yt-container"><i class="fab fa-youtube"></i></div>\
         <h3>See animated videos here</h3><i class="fas fa-angle-right"></i>\
-        </div>`
+        </div>`;
   }
 
   $("#content").html(append);
@@ -97,7 +101,7 @@ function openLinks(server, what) {
       domain = "https://www.behance.net/";
       break;
     case "youtube":
-      domain = "https://www.youtube.com/"
+      domain = "https://www.youtube.com/";
       break;
     case "others":
       domain = server;
@@ -149,15 +153,69 @@ function toggleGlass(e) {
     $icon = $(".icon");
     $content = $("#content-state");
     $multiply = $(".multiply-container");
-    $glass = $('#glassmorphism')
+    $glass = $("#glassmorphism");
     if (response == "y") {
       $content.fadeOut();
-      $glass.attr('data-hidden', 'true');
+      $glass.attr("data-hidden", "true");
+      glassmorphism("down");
     } else {
       $content.fadeIn();
-      $glass.attr('data-hidden', 'false');
+      $glass.attr("data-hidden", "false");
+      glassmorphism("up");
     }
     $icon.toggleClass("up");
     $multiply.toggleClass("faded").toggleClass("passthrough");
   }
+}
+
+function entry(going, direction) {
+  $content = $("#content");
+  var start, end;
+  const px = 50;
+
+  if (going == "enter") {
+    switch (direction) {
+      case "up":
+        start = px *-1;
+        end = "0";
+        break;
+      case "down":
+        start = px;
+        end = "0";
+        break;
+    }
+  } else {
+    switch (direction) {
+      case "up":
+        start = "0";
+        end = px;
+        break;
+      case "down":
+        start = "0";
+        end = px * -1;
+        break;
+    }
+  }
+
+  let anim = gsap.fromTo(
+    $content,
+    {
+      y: start,
+    },
+    {
+      y: end,
+      duration: .3,
+    }
+  );
+}
+
+function glassmorphism(direction) {
+  var end;
+  $glassmorphism = $("#glassmorphism");
+  direction == "down" ? (end = "110%") : (end = "0");
+  let anim = gsap.to($glassmorphism, {
+    y: end,
+    duration: 0.8,
+    ease: "elastic.out(.5, .45)",
+  });
 }

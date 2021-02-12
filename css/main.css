@@ -181,8 +181,6 @@ a {
   border: 2px ridge rgba(220, 227, 229, 0.25);
   -webkit-box-shadow: 0 0.1em 1em rgba(27, 27, 30, 0.15);
           box-shadow: 0 0.1em 1em rgba(27, 27, 30, 0.15);
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
   -webkit-transform-origin: top;
           transform-origin: top;
   -webkit-animation: enter 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -322,6 +320,7 @@ a {
   font-size: 0.75em;
   width: 80%;
   text-align: center;
+  opacity: .95;
 }
 
 @media (min-width: 768px) {
@@ -332,7 +331,7 @@ a {
 
 @media (min-width: 1024px) {
   .glass-container #glassmorphism #content p {
-    font-size: 1.2em;
+    font-size: 1.1em;
     line-height: 1.6em;
   }
 }
@@ -344,18 +343,6 @@ a {
 @media (min-width: 768px) {
   .glass-container #glassmorphism.home {
     height: 65% !important;
-  }
-}
-
-.glass-container.hide #glassmorphism {
-  -webkit-transform: translateY(85%);
-          transform: translateY(85%);
-}
-
-@media (min-width: 768px) {
-  .glass-container.hide #glassmorphism {
-    -webkit-transform: translateY(115%);
-            transform: translateY(115%);
   }
 }
 
@@ -472,6 +459,22 @@ a {
   margin: 2em 0;
 }
 
+.home #content .avatar-container:hover:after {
+  -webkit-transform: translateX(-50%) translateY(-50%) scale(1.5);
+          transform: translateX(-50%) translateY(-50%) scale(1.5);
+  opacity: 0;
+  border: 0 solid #dce3e5;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.home #content .avatar-container:hover .img {
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+  -webkit-transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
 @media (min-width: 1024px) {
   .home #content .avatar-container {
     display: -ms-grid;
@@ -490,13 +493,18 @@ a {
   -webkit-transform: translateX(-50%) translateY(-50%) scale(1.05);
           transform: translateX(-50%) translateY(-50%) scale(1.05);
   border: 0.4em solid #dce3e5;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .home #content .avatar-container .img {
-  background-image: url("../images/neo-wen-kiong.jpg");
+  pointer-events: all;
+  background-image: url("../images/hello.jpg");
   height: 100%;
   width: 100%;
   border-radius: 50%;
+  -webkit-transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .home #content p {
