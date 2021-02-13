@@ -288,6 +288,7 @@ a {
           font-size: 1em;
         }
         @include laptop {
+          font-size: 1.1em;
           line-height: 1.6em;
         }
       }

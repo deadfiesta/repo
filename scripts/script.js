@@ -212,7 +212,7 @@ function entry(going, direction) {
 function glassmorphism(direction) {
   var end;
   $glassmorphism = $("#glassmorphism");
-  direction == "down" ? (end = "110%") : (end = "0");
+  (direction == "down") ? end = "110%" : end = "0";
   let anim = gsap.to($glassmorphism, {
     y: end,
     duration: 1,
