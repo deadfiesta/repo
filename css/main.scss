@@ -186,6 +186,7 @@ a {
     @extend %centerstuff;
     width: 90%;
     height: 95%;
+    min-height: 650px;
     max-height: 550px;
     max-width: 350px;
     stroke: 2px;
@@ -297,7 +298,6 @@ a {
   #glassmorphism.home {
     height: 75% !important;
     @include tablet {
-      // min-height: 650px;
       height: 65% !important;
     }
   }
