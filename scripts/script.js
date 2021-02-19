@@ -45,7 +45,7 @@ function appendContent(html) {
         </ul>`;
       break;
     case "work":
-      append = `<h4>Previous Work</h4>\
+      append = `<h4>UI/UX Projects</h4>\
         <p>My design scope mainly involved designing marketing and publicity material\
         such as web, mobile/desktop app, pitch deck and video productions. Apart from internal\
         collaborations with faculties within the university, we also work with commercial businesses to\
@@ -60,7 +60,7 @@ function appendContent(html) {
         <h3>View more projects</h3><i class="fas fa-angle-right"></i></div>`;
       break;
     case "animated":
-      append = `<h4>Animated Work</h4>\
+      append = `<h4>Animated Projects</h4>\
         <p>One of the most important functions of a logo is to create and promote brand awareness. We\
         believe in animating our logos as much as possible so they appear more memorable and more\
         recognizable to potential investors/customers in the near future. I also create short animated\

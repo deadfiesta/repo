@@ -186,7 +186,6 @@ a {
     @extend %centerstuff;
     width: 90%;
     height: 95%;
-    min-height: 650px;
     max-height: 550px;
     max-width: 350px;
     stroke: 2px;
@@ -200,6 +199,7 @@ a {
     animation: enter 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     @include tablet {
       height: 65%;
+      min-height: 650px;
       max-width: $laptop;
       max-height: none;
     }
@@ -233,7 +233,6 @@ a {
     #content-state {
       height: 100%;
       @extend %centerstuff;
-
     }
     #content {
       height: 90%;
@@ -284,7 +283,7 @@ a {
         font-size: 0.75em;
         width: 80%;
         text-align: center;
-        opacity: .95;
+        opacity: 0.95;
         @include tablet {
           font-size: 1em;
         }
@@ -379,14 +378,14 @@ a {
     width: 7.5em;
     margin: 2em 0;
     &:hover:after {
-      transform: translateX(-50%) translateY(-50%) scale(1.5) ;
+      transform: translateX(-50%) translateY(-50%) scale(1.5);
       opacity: 0;
       border: 0 solid $light-bg;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
     &:hover .img {
       transform: scale(1.25);
-      transition: all .5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     @include laptop {
       display: grid;
@@ -401,7 +400,7 @@ a {
       left: 50%;
       transform: translateX(-50%) translateY(-50%) scale(1.05);
       border: 0.4em solid $light-bg;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
     .img {
       pointer-events: all;
@@ -410,7 +409,7 @@ a {
       height: 100%;
       width: 100%;
       border-radius: 50%;
-      transition: all .5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
   }
   p {
@@ -568,10 +567,10 @@ a {
       width: 90%;
     }
     li {
-      margin: .25em;
+      margin: 0.25em;
       transition: all 0.3s ease;
       @include tablet {
-        margin: .75em;
+        margin: 0.75em;
       }
       &:hover {
         transform: scale(1.2);
@@ -634,6 +633,51 @@ a {
     .fas {
       transform: translateX(-0.35em);
       transition: all 0.3s ease;
+    }
+  }
+}
+
+.websites #content {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    li {
+      width: 40%;
+      margin: 0.5em 1%;
+      @include tablet {
+        width: 22.5%;
+      }
+      .project-thumbnails {
+        cursor: pointer;
+        border-radius: $border-radius;
+        width: 100%;
+        height: 6em;
+        box-shadow: 0 0.1em 1em rgba($dark-color, $alpha: 0.5);
+        @extend %bgcover;
+        @extend %easeback;
+        @include tablet {
+          height: 10em;
+        }
+        &:hover {
+          transform: scale(1.1);
+          @extend %easeback;
+        }
+      }
+      #aarc {
+        background-image: url("../images/proj-fleet.jpg");
+      }
+      #suite {
+        background-image: url("../images/proj-suite.jpg");
+      }
+      #retail {
+        background-image: url("../images/proj-retail.jpg");
+      }
+      #fit {
+        background-image: url("../images/proj-fit.jpg");
+      }
     }
   }
 }
