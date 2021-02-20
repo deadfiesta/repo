@@ -174,6 +174,27 @@ a {
     background-image: url("../images/aboutbg.jpg");
   }
 }
+.website-bg {
+  @extend %bgfullpage;
+  @extend %bgcover;
+}
+#aarc-web {
+  background-image: url("../images/aarc.jpg");
+}
+#fleet-web {
+  background-image: url("../images/fleet.jpg");
+}
+#lim-web {
+  background-image: url("../images/limandrew.jpg");
+}
+#indoor-web {
+  background-image: url("../images/indoor.jpg");
+}
+
+.website-bg {
+  z-index: 20;
+  display: none;
+}
 .glass-container {
   @extend %centerstuff;
   position: fixed;
@@ -251,6 +272,78 @@ a {
       z-index: 20;
       ul {
         pointer-events: all;
+      }
+      ul.projects {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        li {
+          width: 40%;
+          margin: 0.5em 1%;
+          @include tablet {
+            width: 22.5%;
+          }
+          .web-thumbnails {
+            cursor: pointer;
+            border-radius: $border-radius;
+            width: 100%;
+            height: 6em;
+            box-shadow: 0 0.1em 1em rgba($dark-color, $alpha: 0.5);
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: cover;
+            @extend %easeback;
+            @include tablet {
+              height: 10em;
+            }
+            &:hover {
+              transform: scale(1.1);
+              @extend %easeback;
+            }
+          }
+          .project-thumbnails {
+            cursor: pointer;
+            border-radius: $border-radius;
+            width: 100%;
+            height: 6em;
+            box-shadow: 0 0.1em 1em rgba($dark-color, $alpha: 0.5);
+            @extend %bgcover;
+            @extend %easeback;
+            @include tablet {
+              height: 10em;
+            }
+            &:hover {
+              transform: scale(1.1);
+              @extend %easeback;
+            }
+          }
+          #fleet {
+            background-image: url("../images/proj-fleet.jpg");
+          }
+          #suite {
+            background-image: url("../images/proj-suite.jpg");
+          }
+          #retail {
+            background-image: url("../images/proj-retail.jpg");
+          }
+          #fit {
+            background-image: url("../images/proj-fit.jpg");
+          }
+          #aarc {
+            background-image: url("../images/aarc.jpg");
+          }
+          #fleetmgmt {
+            background-image: url("../images/fleet.jpg");
+          }
+          #indoor {
+            background-image: url("../images/indoor.jpg");
+          }
+          #limandrew {
+            background-image: url("../images/limandrew.jpg");
+          }
+        }
       }
       h4 {
         font-weight: $semibold;
@@ -472,48 +565,6 @@ a {
 }
 //work
 .work #content {
-  ul.projects {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    li {
-      width: 40%;
-      margin: 0.5em 1%;
-      @include tablet {
-        width: 22.5%;
-      }
-      .project-thumbnails {
-        cursor: pointer;
-        border-radius: $border-radius;
-        width: 100%;
-        height: 6em;
-        box-shadow: 0 0.1em 1em rgba($dark-color, $alpha: 0.5);
-        @extend %bgcover;
-        @extend %easeback;
-        @include tablet {
-          height: 10em;
-        }
-        &:hover {
-          transform: scale(1.1);
-          @extend %easeback;
-        }
-      }
-      #fleet {
-        background-image: url("../images/proj-fleet.jpg");
-      }
-      #suite {
-        background-image: url("../images/proj-suite.jpg");
-      }
-      #retail {
-        background-image: url("../images/proj-retail.jpg");
-      }
-      #fit {
-        background-image: url("../images/proj-fit.jpg");
-      }
-    }
-  }
   .view-more {
     cursor: pointer;
     pointer-events: all;
@@ -637,47 +688,28 @@ a {
   }
 }
 
-.websites #content {
-  ul {
+.frontend #content {
+  height: 50%;
+  .view-more {
+    border-radius: $border-radius;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
-    width: 90%;
-    li {
-      width: 40%;
-      margin: 0.5em 1%;
-      @include tablet {
-        width: 22.5%;
-      }
-      .project-thumbnails {
-        cursor: pointer;
-        border-radius: $border-radius;
-        width: 100%;
-        height: 6em;
-        box-shadow: 0 0.1em 1em rgba($dark-color, $alpha: 0.5);
-        @extend %bgcover;
-        @extend %easeback;
-        @include tablet {
-          height: 10em;
-        }
-        &:hover {
-          transform: scale(1.1);
-          @extend %easeback;
-        }
-      }
-      #aarc {
-        background-image: url("../images/proj-fleet.jpg");
-      }
-      #suite {
-        background-image: url("../images/proj-suite.jpg");
-      }
-      #retail {
-        background-image: url("../images/proj-retail.jpg");
-      }
-      #fit {
-        background-image: url("../images/proj-fit.jpg");
-      }
+    padding: 1em;
+    transition: all 0.3s ease;
+    font-size: 0.8em;
+    @include tablet {
+      font-size: 1em;
+    }
+    .open-container {
+      @extend %centerstuff;
+      border-radius: $border-radius;
+      padding: 0.5em;
+      background-color: $primary-color;
+    }
+    h3 {
+      margin: 0 0 0 1em;
+      font-size: 1em;
+      font-weight: $medium;
     }
   }
 }

@@ -1,7 +1,7 @@
 $(function () {
   new fullpage("#fullpage", {
     //options here
-    anchors: ["home", "work", "animated"],
+    anchors: ["home", "work", "animated", "frontend"],
     autoScrolling: true,
     scrollHorizontally: true,
     navigation: true,
@@ -19,12 +19,12 @@ $(function () {
       });
       setTimeout(function () {
         $("#glassmorphism").removeClass().addClass($class);
-        entry('exit', direction)
+        entry("exit", direction);
       }, 200);
     },
   });
-  appendContent("home");
-  $("#glassmorphism").addClass("home");
+  // appendContent("home");
+  // $("#glassmorphism").addClass("home");
 });
 
 function appendContent(html) {
@@ -84,9 +84,25 @@ function appendContent(html) {
         <div class="yt-container"><i class="fab fa-youtube"></i></div>\
         <h3>See animated videos here</h3><i class="fas fa-angle-right"></i>\
         </div>`;
+      break;
+    case "frontend":
+      append = `<h4>Front-End Web</h4>\
+      <p>My role as a designer equipped with the fundamental knowledge of front-end web development gives me a better understanding of the possibilities, limitations, and the tradeoffs.</p>\
+      <ul class="projects">\
+      <li><div onclick="openLinks('aarc', '')" data-bg="aarc-web" class="web-thumbnails" id="aarc"></div></li>\
+      <li><div onclick="openLinks('alim', 'fleet-management/v3')" data-bg="fleet-web" class="web-thumbnails" id="fleetmgmt"></div></li>\
+      <li><div onclick="openLinks('lim', '')" class="web-thumbnails" data-bg="lim-web" id="limandrew"></div></li>\
+      <li><div onclick="openLinks('alim', 'indoor-navigation')" data-bg="indoor-web" class="web-thumbnails" id="indoor"></div></li>\
+      </ul>\
+      <div class="view-more">\
+      <div class="open-container"><i class="fas fa-external-link-square-alt"></i></div>\
+      <h3 class="message">Click to visit live links</h3>\
+      </div>`;
   }
 
   $("#content").html(append);
+  mouseoverEvents();
+  
 }
 
 function openLinks(server, what) {
@@ -101,6 +117,12 @@ function openLinks(server, what) {
       break;
     case "youtube":
       domain = "https://www.youtube.com/";
+      break;
+    case "aarc":
+      domain = "https://aseanarc.org/";
+      break;
+    case "lim":
+      domain = "https://www.limandrew.org/";
       break;
     case "others":
       domain = server;
@@ -175,7 +197,7 @@ function entry(going, direction) {
   if (going == "enter") {
     switch (direction) {
       case "up":
-        start = px *-1;
+        start = px * -1;
         end = "0";
         break;
       case "down":
@@ -203,7 +225,7 @@ function entry(going, direction) {
     },
     {
       y: end,
-      duration: .6,
+      duration: 0.6,
       ease: "power3.out",
     }
   );
@@ -212,10 +234,23 @@ function entry(going, direction) {
 function glassmorphism(direction) {
   var end;
   $glassmorphism = $("#glassmorphism");
-  (direction == "down") ? end = "110%" : end = "0";
+  direction == "down" ? (end = "110%") : (end = "0");
   let anim = gsap.to($glassmorphism, {
     y: end,
     duration: 1,
     ease: "elastic.out(.5, .45)",
   });
+}
+
+function mouseoverEvents() {
+  $(".web-thumbnails").hover(
+    function () {
+      var $what = $(this).attr("data-bg");
+      $("#" + $what).fadeIn("fast");
+    },
+    function () {
+      var $web = $(".website-bg");
+      $web.fadeOut();
+    }
+  );
 }
