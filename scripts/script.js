@@ -1,6 +1,6 @@
 $(function () {
+  //fullpage js
   new fullpage("#fullpage", {
-    //options here
     anchors: ["home", "work", "animated", "frontend"],
     autoScrolling: true,
     scrollHorizontally: true,
@@ -15,6 +15,7 @@ $(function () {
         setTimeout(function () {
           $content.fadeIn(300);
           entry("enter", direction);
+          checkWhere($class);
         }, 200);
       });
       setTimeout(function () {
@@ -23,7 +24,9 @@ $(function () {
       }, 200);
     },
   });
+  //init stuff
   appendContent("home");
+  checkWhere("home");
   $("#glassmorphism").addClass("home");
 });
 
@@ -35,7 +38,7 @@ function appendContent(html) {
         <div class="img"></div></div>\
         <h4>Hello There</h4>\
         <div class="title-container"><h2>I'm&nbsp;</h2><h1>Wen Kiong</h1></div>\
-        <ul class="fields"><li>#ui/ux</li><li>#animation</li><li>#frontendweb</li></ul>\
+        <ul class="fields"><li>#<span class="typing"></span></li></ul>\
         <p>I have worked at NUS for 4 years as a visual designer. I mainly worked with software engineers to\
         create high fidelity mobile and desktop app mockups for commercial and government entities.</p>\
         <ul class="companies"><li><object data="./images/logos_nus.svg"></object></li>\
@@ -101,8 +104,6 @@ function appendContent(html) {
   }
 
   $("#content").html(append);
-  mouseoverEvents();
-  
 }
 
 function openLinks(server, what) {
@@ -242,15 +243,30 @@ function glassmorphism(direction) {
   });
 }
 
-function mouseoverEvents() {
-  $(".web-thumbnails").hover(
-    function () {
-      var $what = $(this).attr("data-bg");
-      $("#" + $what).fadeIn("fast");
-    },
-    function () {
-      var $web = $(".website-bg");
-      $web.fadeOut();
-    }
-  );
+function checkWhere(where) {
+  switch (where) {
+    case "home":
+      //typedjs
+      var typed = new Typed(".typing", {
+        strings: ["ui/ux", "animation", "frontend-web"],
+        typeSpeed: 40,
+        backSpeed: 40,
+        backDelay: 1200,
+        smartBackspace: true,
+        loop: true,
+      });
+      break;
+    case "frontend":
+      $(".web-thumbnails").hover(
+        function () {
+          var $what = $(this).attr("data-bg");
+          $("#" + $what).fadeIn("fast");
+        },
+        function () {
+          var $web = $(".website-bg");
+          $web.fadeOut();
+        }
+      );
+      break;
+  }
 }

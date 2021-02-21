@@ -60,6 +60,24 @@ a {
   color: inherit;
 }
 
+.typed-cursor {
+  opacity: 1;
+  -webkit-animation: blinking .7s infinite;
+          animation: blinking .7s infinite;
+}
+
+@-webkit-keyframes blinking {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes blinking {
+  50% {
+    opacity: 0;
+  }
+}
+
 .container {
   margin: 0 auto;
   width: 75%;
@@ -658,32 +676,26 @@ a {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin: 1.5em 0;
+    margin: 2em 0 .5em;
   }
 }
 
 .home #content ul.fields li {
   cursor: default;
   font-size: 1em;
-  background-color: rgba(27, 27, 30, 0.35);
+  background-color: #4361ee;
   font-size: 0.75em;
   height: 2.5em;
   margin: 0 0.25em;
   padding: 0 1em;
   height: 2.2em;
   border-radius: 1.1em;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
 
 @media (min-width: 768px) {
   .home #content ul.fields li {
-    font-size: 0.9em;
+    font-size: 1.1em;
   }
-}
-
-.home #content ul.fields li:hover {
-  background-color: #4361ee;
 }
 
 .home #content ul.companies {
