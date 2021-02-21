@@ -614,6 +614,10 @@ a {
   }
 }
 
+.home #content .title-container {
+  font-size: .8em;
+}
+
 .home #content .avatar-container {
   display: none;
   position: relative;
@@ -743,7 +747,6 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin: 1.25% 0;
 }
 
 @media (min-width: 768px) {
