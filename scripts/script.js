@@ -35,9 +35,12 @@ function appendContent(html) {
   switch (html) {
     case "home":
       append = `<div class="avatar-container">\
-        <div class="img"></div></div>\
+        <div class="rot-bg-front"></div>\
+        <div class="img"></div>\
+        <div class="rot-bg"></div>\
+        </div>\
         <h4>Hello There</h4>\
-        <div class="title-container"><h2>I'm&nbsp;</h2><h1>Wen Kiong</h1></div>\
+        <div class="title-container"><h2>I Bring Designs to&nbsp;</h2><h1>Life</h1></div>\
         <ul class="fields"><li>#<span class="typing"></span></li></ul>\
         <p>I have worked at NUS for 4 years as a visual designer. I mainly worked with software engineers to\
         create high fidelity mobile and desktop app mockups for commercial and government entities.</p>\
@@ -89,7 +92,7 @@ function appendContent(html) {
         </div>`;
       break;
     case "frontend":
-      append = `<h4>Front-End Web</h4>\
+      append = `<h4>Frontend Web</h4>\
       <p>My role as a designer equipped with the fundamental knowledge of front-end web development gives me a better understanding of the possibilities, limitations, and the tradeoffs.</p>\
       <ul class="projects">\
       <li><div onclick="openLinks('aarc', '')" data-bg="aarc-web" class="web-thumbnails" id="aarc"></div></li>\
@@ -248,10 +251,10 @@ function checkWhere(where) {
     case "home":
       //typedjs
       var typed = new Typed(".typing", {
-        strings: ["ui/ux", "animation", "frontend-web"],
+        strings: ["ui/ux", "animation", "frontend-dev"],
         typeSpeed: 40,
         backSpeed: 40,
-        backDelay: 1200,
+        backDelay: 3500,
         smartBackspace: true,
         loop: true,
       });
