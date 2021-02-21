@@ -1,7 +1,7 @@
 $(function () {
   //fullpage js
   new fullpage("#fullpage", {
-    anchors: ["home", "work", "animated", "frontend"],
+    anchors: ["home", "work", "animated", "frontend", "pctech"],
     autoScrolling: true,
     scrollHorizontally: true,
     navigation: true,
@@ -100,10 +100,29 @@ function appendContent(html) {
       <li><div onclick="openLinks('lim', '')" class="web-thumbnails" data-bg="lim-web" id="limandrew"></div></li>\
       <li><div onclick="openLinks('alim', 'indoor-navigation')" data-bg="indoor-web" class="web-thumbnails" id="indoor"></div></li>\
       </ul>\
-      <div class="view-more">\
-      <div class="open-container"><i class="fas fa-external-link-square-alt"></i></div>\
-      <h3 class="message">Click to visit live links</h3>\
+      <div class="view-more" onclick="openLinks('self', 'skootar/')">\
+      <div class="fa-container"><i class="fas fa-mobile-alt"></i></div>\
+      <h3>See my submission here</h3><i class="fas fa-angle-right"></i>\
       </div>`;
+      break;
+    case "pctech":
+      append = `<h4>PC Hareware & Tech</h4>\
+      <p>When I'm not working, I like to keep up with PC hardware and tech related news. I enjoy PC building and I've probably spent more time than I should tinkering with my PC from time to time. As a designer, we're all fascinated about the beauty of colors and this is what the mainstream PC culture is all about today: <span class="glorious">The Glorious RGB.</span></p>\
+      <ul class="projects">\
+      <li><div class="project-thumbnails"><video playsinline autoplay muted loop data-keepplaying\
+      src="./videos/setup-02.MP4"\
+      type="video/ogg"></video></div></li>\
+      <li><div class="project-thumbnails" id="setup02"></div></li>\
+      <li><div class="project-thumbnails" id="setup03"></div></li>\
+      <li><div class="project-thumbnails"><video playsinline autoplay muted loop data-keepplaying\
+      src="./videos/setup-loop.mp4"\
+      type="video/ogg"></video></div></li>\
+      </ul>\
+      <div class="view-more" onclick="openLinks('self', 'h210i/')">\
+      <div class="fa-container"><i class="fas fa-desktop"></i></div>\
+      <h3>Check out my NZXT build here</h3><i class="fas fa-angle-right"></i>\
+      </div>`;
+      break;
   }
 
   $("#content").html(append);
@@ -127,6 +146,9 @@ function openLinks(server, what) {
       break;
     case "lim":
       domain = "https://www.limandrew.org/";
+      break;
+    case "self":
+      domain = "https://deadfiesta.studio/";
       break;
     case "others":
       domain = server;
@@ -251,10 +273,10 @@ function checkWhere(where) {
     case "home":
       //typedjs
       var typed = new Typed(".typing", {
-        strings: ["ui/ux", "animation", "frontend-dev"],
+        strings: ["ui/ux", "animation", "frontend-web"],
         typeSpeed: 40,
         backSpeed: 40,
-        backDelay: 3500,
+        backDelay: 2500,
         smartBackspace: true,
         loop: true,
       });

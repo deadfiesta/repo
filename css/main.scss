@@ -322,6 +322,7 @@ a {
             border-radius: $border-radius;
             width: 100%;
             height: 6em;
+            overflow: hidden;
             box-shadow: 0 0.1em 1em rgba($dark-color, $alpha: 0.5);
             @extend %bgcover;
             @extend %easeback;
@@ -331,6 +332,12 @@ a {
             &:hover {
               transform: scale(1.1);
               @extend %easeback;
+            }
+            video {
+              @extend %bgcover;
+              object-fit: cover;
+              width: 100%;
+              height: 100%;
             }
           }
           #fleet {
@@ -356,6 +363,15 @@ a {
           }
           #limandrew {
             background-image: url("../images/limandrew.jpg");
+          }
+          #setup01 {
+            background-image: url("../images/setup-01.JPG");
+          }
+          #setup02 {
+            background-image: url("../images/setup-02.JPG");
+          }
+          #setup03 {
+            background-image: url("../images/setup-05.jpg");
           }
         }
       }
@@ -494,6 +510,14 @@ a {
       transform: scale(1.25);
       transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
+    &:hover .rot-bg {
+      opacity: 0;
+      transition: all .3s ease;
+    }
+    &:hover .rot-bg-front {
+      opacity: 0;
+      transition: all .3s ease;
+    }
     @include laptop {
       display: grid;
     }
@@ -528,8 +552,8 @@ a {
       background-image: url("../images/rot-bg.jpg");
       height: 100%;
       width: 100%;
+      transition: all .3s ease;
       border-radius: 50%;
-      transform: rotate(0);
       animation: rotating 20s linear infinite;
     }
     .rot-bg {
@@ -540,7 +564,7 @@ a {
       height: 100%;
       width: 100%;
       border-radius: 50%;
-      transform: rotate(0);
+      transition: all .3s ease;
       animation: rotating 20s linear infinite;
       @keyframes rotating {
         100% {
@@ -712,7 +736,7 @@ a {
       @extend %centerstuff;
       border-radius: $border-radius;
       padding: 0.5em;
-      background-color: $red;
+      background-color: $secondary-color;
     }
     h3 {
       margin: 0 1em;
@@ -732,6 +756,9 @@ a {
 .frontend #content {
   height: 50%;
   .view-more {
+    cursor: pointer;
+    pointer-events: all;
+    background-color: rgba($light-bg, $alpha: 0.15);
     border-radius: $border-radius;
     display: flex;
     align-items: center;
@@ -741,7 +768,15 @@ a {
     @include tablet {
       font-size: 1em;
     }
-    .open-container {
+    &:hover {
+      background-color: rgba($light-bg, $alpha: 0.25);
+      transition: all 0.3s ease;
+    }
+    &:hover .fa-angle-right {
+      transform: translateX(.25em);
+      transition: all 0.3s ease;
+    }
+    .fa-container {
       @extend %centerstuff;
       border-radius: $border-radius;
       padding: 0.5em;
@@ -751,6 +786,56 @@ a {
       margin: 0 0 0 1em;
       font-size: 1em;
       font-weight: $medium;
+    }
+    .fa-angle-right {
+      padding-left: .75em;
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+.pctech #content {
+  .glorious {
+    font-weight: $semibold;
+  }
+  .view-more {
+    cursor: pointer;
+    pointer-events: all;
+    background-color: rgba($light-bg, $alpha: 0.15);
+    border-radius: $border-radius;
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    transition: all 0.3s ease;
+    font-size: 0.8em;
+    @include tablet {
+      font-size: 1em;
+    }
+    &:hover {
+      background-color: rgba($light-bg, $alpha: 0.25);
+      transition: all 0.3s ease;
+    }
+    &:hover .fas {
+      transform: translateX(0);
+      transition: all 0.3s ease;
+    }
+    .fa-container {
+      @extend %centerstuff;
+      border-radius: $border-radius;
+      padding: 0.5em;
+      background-color: $yellow;
+    }
+    h3 {
+      margin: 0 1em;
+      font-size: 1em;
+      font-weight: $medium;
+    }
+    .fab {
+      font-size: 1.15em;
+    }
+    .fa-angle-right {
+      transform: translateX(-0.35em);
+      transition: all 0.3s ease;
     }
   }
 }

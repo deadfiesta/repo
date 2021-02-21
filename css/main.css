@@ -26,13 +26,13 @@ body {
   min-height: 100%;
 }
 
-.video-container .bg01, .website-bg, .glass-container #glassmorphism #content ul.projects li .project-thumbnails, .home #content .avatar-container .img, .home #content .avatar-container .rot-bg-front, .home #content .avatar-container .rot-bg, .animated #content ul.animated li .animated-logo-container video {
+.video-container .bg01, .website-bg, .glass-container #glassmorphism #content ul.projects li .project-thumbnails, .glass-container #glassmorphism #content ul.projects li .project-thumbnails video, .home #content .avatar-container .img, .home #content .avatar-container .rot-bg-front, .home #content .avatar-container .rot-bg, .animated #content ul.animated li .animated-logo-container video {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.video-container, .glass-container, .glass-container #glassmorphism, .glass-container #glassmorphism .content-container, .glass-container #glassmorphism #content-state, .home #content ul.fields li, .work #content .view-more .be-container, .animated #content ul.animated, .animated #content .view-more .yt-container, .frontend #content .view-more .open-container {
+.video-container, .glass-container, .glass-container #glassmorphism, .glass-container #glassmorphism .content-container, .glass-container #glassmorphism #content-state, .home #content ul.fields li, .work #content .view-more .be-container, .animated #content ul.animated, .animated #content .view-more .yt-container, .frontend #content .view-more .fa-container, .pctech #content .view-more .fa-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -371,6 +371,7 @@ a {
   border-radius: 0.25em;
   width: 100%;
   height: 6em;
+  overflow: hidden;
   -webkit-box-shadow: 0 0.1em 1em rgba(27, 27, 30, 0.5);
           box-shadow: 0 0.1em 1em rgba(27, 27, 30, 0.5);
 }
@@ -384,6 +385,13 @@ a {
 .glass-container #glassmorphism #content ul.projects li .project-thumbnails:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.glass-container #glassmorphism #content ul.projects li .project-thumbnails video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .glass-container #glassmorphism #content ul.projects li #fleet {
@@ -416,6 +424,18 @@ a {
 
 .glass-container #glassmorphism #content ul.projects li #limandrew {
   background-image: url("../images/limandrew.jpg");
+}
+
+.glass-container #glassmorphism #content ul.projects li #setup01 {
+  background-image: url("../images/setup-01.JPG");
+}
+
+.glass-container #glassmorphism #content ul.projects li #setup02 {
+  background-image: url("../images/setup-02.JPG");
+}
+
+.glass-container #glassmorphism #content ul.projects li #setup03 {
+  background-image: url("../images/setup-05.jpg");
 }
 
 .glass-container #glassmorphism #content h4 {
@@ -618,6 +638,18 @@ a {
   transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+.home #content .avatar-container:hover .rot-bg {
+  opacity: 0;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.home #content .avatar-container:hover .rot-bg-front {
+  opacity: 0;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
 @media (min-width: 1024px) {
   .home #content .avatar-container {
     display: -ms-grid;
@@ -659,9 +691,9 @@ a {
   background-image: url("../images/rot-bg.jpg");
   height: 100%;
   width: 100%;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
   border-radius: 50%;
-  -webkit-transform: rotate(0);
-          transform: rotate(0);
   -webkit-animation: rotating 20s linear infinite;
           animation: rotating 20s linear infinite;
 }
@@ -673,8 +705,8 @@ a {
   height: 100%;
   width: 100%;
   border-radius: 50%;
-  -webkit-transform: rotate(0);
-          transform: rotate(0);
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
   -webkit-animation: rotating 20s linear infinite;
           animation: rotating 20s linear infinite;
 }
@@ -928,7 +960,7 @@ a {
 .animated #content .view-more .yt-container {
   border-radius: 0.25em;
   padding: 0.5em;
-  background-color: #ff006e;
+  background-color: #ff0a54;
 }
 
 .animated #content .view-more h3 {
@@ -953,6 +985,9 @@ a {
 }
 
 .frontend #content .view-more {
+  cursor: pointer;
+  pointer-events: all;
+  background-color: rgba(220, 227, 229, 0.15);
   border-radius: 0.25em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -972,7 +1007,20 @@ a {
   }
 }
 
-.frontend #content .view-more .open-container {
+.frontend #content .view-more:hover {
+  background-color: rgba(220, 227, 229, 0.25);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.frontend #content .view-more:hover .fa-angle-right {
+  -webkit-transform: translateX(0.25em);
+          transform: translateX(0.25em);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.frontend #content .view-more .fa-container {
   border-radius: 0.25em;
   padding: 0.5em;
   background-color: #4361ee;
@@ -982,5 +1030,74 @@ a {
   margin: 0 0 0 1em;
   font-size: 1em;
   font-weight: 500;
+}
+
+.frontend #content .view-more .fa-angle-right {
+  padding-left: .75em;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.pctech #content .glorious {
+  font-weight: 600;
+}
+
+.pctech #content .view-more {
+  cursor: pointer;
+  pointer-events: all;
+  background-color: rgba(220, 227, 229, 0.15);
+  border-radius: 0.25em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1em;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-size: 0.8em;
+}
+
+@media (min-width: 768px) {
+  .pctech #content .view-more {
+    font-size: 1em;
+  }
+}
+
+.pctech #content .view-more:hover {
+  background-color: rgba(220, 227, 229, 0.25);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.pctech #content .view-more:hover .fas {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.pctech #content .view-more .fa-container {
+  border-radius: 0.25em;
+  padding: 0.5em;
+  background-color: #8338ec;
+}
+
+.pctech #content .view-more h3 {
+  margin: 0 1em;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.pctech #content .view-more .fab {
+  font-size: 1.15em;
+}
+
+.pctech #content .view-more .fa-angle-right {
+  -webkit-transform: translateX(-0.35em);
+          transform: translateX(-0.35em);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 /*# sourceMappingURL=main.css.map */
