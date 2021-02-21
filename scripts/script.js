@@ -23,8 +23,8 @@ $(function () {
       }, 200);
     },
   });
-  // appendContent("home");
-  // $("#glassmorphism").addClass("home");
+  appendContent("home");
+  $("#glassmorphism").addClass("home");
 });
 
 function appendContent(html) {
